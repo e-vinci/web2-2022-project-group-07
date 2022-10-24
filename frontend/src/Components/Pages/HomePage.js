@@ -2,14 +2,22 @@ import brainWallPaper from '../../img/wallPaperTest.png';
 
 
 const homePage = `
-<div class="text-center">
-  <h3>Welcome to Brainy !</h3>
+<section class="padding-x-md padding-y-lg">
+  <div class="grid gap-md items-center">
+    <div class="col-6">
+      <div class="text-component">
+        <h1 class="text-lg">Welcome to My Brain Capacity !</h1>
+        <p>Here you can try to improve your brain level</p>
+      </div>
+    </div>
 
-  <p>Here you can try to improve your brain level</p>
-  <div class="pb-3">
-    <img class="img-thumbnail w-50" src="${brainWallPaper}" alt="BrainWallpaper" />
+    <div class="col-6">
+      <figure class="td-figure">
+        <img class="block width-100%" src="${brainWallPaper}" alt="BrainWallpaper" />
+      </figure>
+    </div>
   </div>
-</div>`;
+</section>`;
 
 
 const HomePage = () => {

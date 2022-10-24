@@ -19,7 +19,7 @@ function renderNavbar() {
   const anonymousUserNavbar = `
   <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Brainy</a>
+          <a class="navbar-brand" href="#">My Brain Capacity</a>
           <button
             class="navbar-toggler"
             type="button"

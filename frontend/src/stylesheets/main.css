@@ -1,0 +1,41 @@
+
+.text-component {
+    position: fixed;
+    top: 280px;
+    left: 100px;
+}
+
+.td-figure {
+    perspective: 1500px;
+}
+
+.td-figure {
+    position: fixed;
+    top: 95px;
+    left: 800px;
+    border-radius: 50%;
+}
+
+.td-figure img{
+    max-height: 2000px;
+    max-width: 550px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.img {
+    display: inline-block;
+}
+
+img:hover {
+    transform: rotate(0);
+    transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
+    border-radius: 50%;
+    box-shadow: 2px 10px 30px hsla()
+
+}
+
+
+.p-5 {
+    caret-color: blue;
+}
