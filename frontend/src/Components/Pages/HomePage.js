@@ -6,8 +6,8 @@ const homePage = `
   <div class="grid gap-md items-center">
     <div class="col-6">
       <div class="text-component">
-        <h1 class="text-lg">Welcome to My Brain Capacity !</h1>
-        <p>Here you can try to improve your brain level</p>
+        <h1 class="text-lg">Welcome to BeBrain !</h1>
+        <p>Here you can try to improve your brain level and discover his potential.</p>
       </div>
     </div>
 
