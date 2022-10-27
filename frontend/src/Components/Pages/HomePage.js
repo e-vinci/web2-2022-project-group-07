@@ -1,4 +1,4 @@
-import brainWallPaper from '../../img/wallPaperTest.png';
+// import brainWallPaper from '../../img/wallPaperTest.png';
 import rotatingBrain from '../../img/rotatingBrain.gif';
 
 

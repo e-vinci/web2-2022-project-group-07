@@ -17,9 +17,12 @@ function renderNavbar() {
   const navbarWrapper = document.querySelector('#navbarWrapper');
   
   const anonymousUserNavbar = `
-  <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">BeBrain</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container-fluid" id="navbarLogo">
+          <a class="navbar-brand" href="/">
+          BeBrain
+          </a>
+          
           <button
             class="navbar-toggler"
             type="button"
@@ -34,7 +37,7 @@ function renderNavbar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-uri="/">Home</a>
+                <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
               </li>
               <li id="loginItem" class="nav-item">
                 <a class="nav-link" href="#" data-uri="/login">Login</a>
@@ -52,7 +55,7 @@ function renderNavbar() {
   `;
   
   const navbarAuth = `
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Brainy</a>
           <button

@@ -1,15 +1,65 @@
-
 body {
     background-image: url("../img/sky.jpg");
     color: aqua;
 }
 
+/*NavBar*/
+.nav-link {
+    margin-left: 210px;
+    margin-top: 25px;
+    color: blue;
+
+}
+.nav-link {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1vw;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+.nav-link:hover {
+    border-radius:70%;
+    border-bottom: 5px solid #4099ff;
+    border-left: 1px solid #4099ff;
+    border-right: 1px solid #4099ff;
+    color:#fff!important;
+}
+
+
+#navbarHome {
+    color: blue;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 24px;
+    margin-left: 25px;
+    margin-top: 15px;
+    color: blue;
+    width: 100%;
+    max-width: 115px;
+    position: fixed;
+    
+}
+.navbar-brand:hover {
+    color: blue;
+    border: 6px solid rgb(96, 26, 188);
+    border-radius: 25px;
+}
+
+
+
 .text-component {
-    color: aqua;
     position: fixed;
     top: 280px;
     left: 100px;
+
+	font-weight: 700;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('../img/ground.jpg');
 }
+
 
 .td-figure {
     perspective: 1500px;
@@ -17,7 +67,7 @@ body {
 
 .td-figure {
     position: fixed;
-    top: 95px;
+    top: 165px;
     left: 800px;
     border-radius: 50%;
 }
