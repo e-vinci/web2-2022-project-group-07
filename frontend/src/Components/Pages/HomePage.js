@@ -1,4 +1,5 @@
 import brainWallPaper from '../../img/wallPaperTest.png';
+import rotatingBrain from '../../img/rotatingBrain.gif';
 
 
 const homePage = `
@@ -10,10 +11,10 @@ const homePage = `
         <p>Here you can try to improve your brain level and discover his potential.</p>
       </div>
     </div>
-
+    
     <div class="col-6">
       <figure class="td-figure">
-        <img class="block width-100%" src="${brainWallPaper}" alt="BrainWallpaper" />
+        <img class="block width-100%" src="${rotatingBrain}" alt="BrainWallpaper" />
       </figure>
     </div>
   </div>
