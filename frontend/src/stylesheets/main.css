@@ -9,7 +9,7 @@ body {
 .nav-link {
     margin-left: 210px;
     margin-top: 25px;
-    color: blue;
+    color: #7894E1;
 
 }
 .nav-link {
@@ -28,7 +28,7 @@ body {
 
 
 #navbarHome {
-    color: blue;
+    color: 7894E1;
 }
 
 .navbar-brand {
@@ -36,16 +36,18 @@ body {
     font-size: 24px;
     margin-left: 25px;
     margin-top: 15px;
-    color: blue;
+    color: #7894E1;
     width: 100%;
     max-width: 115px;
     position: fixed;
     
 }
 .navbar-brand:hover {
-    color: blue;
-    border: 6px solid rgb(96, 26, 188);
-    border-radius: 25px;
+    border-radius:70%;
+    border-bottom: 5px solid #4099ff;
+    border-left: 1px solid #4099ff;
+    border-right: 1px solid #4099ff;
+    color:#fff!important;
 }
 
 

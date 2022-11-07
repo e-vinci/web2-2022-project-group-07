@@ -30,7 +30,6 @@ function renderNavbar() {
    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="navbar-brand" href="#">BeBrain</a>
-      <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
       <a class="nav-link" href="#" data-uri="/login">Login</a>
       <a class="nav-link" href="#" data-uri="/register">Register</a>
       <a class="nav-link" href="#" data-uri="/game">GameOne</a>
