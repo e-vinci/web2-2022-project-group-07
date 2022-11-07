@@ -48,7 +48,7 @@ function renderNavbar() {
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
 
   `;
   
