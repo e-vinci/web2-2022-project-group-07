@@ -17,7 +17,6 @@ const homePage = `
                 <div class="gif">
                     <img class="img-fluid" src="${rotatingBrain}" alt="Responsive image" />
                 </div>
-            
         </div>
     </section>
   </div>
