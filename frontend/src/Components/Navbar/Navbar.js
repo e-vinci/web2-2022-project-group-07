@@ -17,26 +17,38 @@ function renderNavbar() {
   const navbarWrapper = document.querySelector('#navbarWrapper');
   
   const anonymousUserNavbar = `
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <button class="navbar-toggler" 
-    type="button" 
-    data-toggle="collapse" 
-    data-target="#navbarNavAltMarkup" 
-    aria-controls="navbarNavAltMarkup" 
-    aria-expanded="false" 
-    aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-  </button>
-   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="navbar-brand" href="#">BeBrain</a>
-      <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
-      <a class="nav-link" href="#" data-uri="/login">Login</a>
-      <a class="nav-link" href="#" data-uri="/register">Register</a>
-      <a class="nav-link" href="#" data-uri="/game">GameOne</a>
+<nav class="navbar navbar-expand-lg bg-light bg-transparent">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler navdown" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">BeBrain</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    
+      <ul class="navbar-nav">
+       <li class="nav-item">
+        
+       </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-uri="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-uri="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-uri="/game">GameOne</a>
+        </li>
+      </ul>
     </div>
   </div>
-  </nav>
+</nav>
 
   `;
   

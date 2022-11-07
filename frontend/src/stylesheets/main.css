@@ -47,7 +47,9 @@ body {
     border: 6px solid rgb(96, 26, 188);
     border-radius: 25px;
 }
-
+.navdown{
+    background-color: #4099ff;
+}
 
 
 
