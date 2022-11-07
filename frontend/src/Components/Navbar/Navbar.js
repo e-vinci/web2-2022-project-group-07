@@ -23,16 +23,12 @@ function renderNavbar() {
     <button class="navbar-toggler navdown" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">BeBrain</a>
+    <a class="navbar-brand" href="./">BeBrain</a>
     <div class="collapse navbar-collapse" id="navbarNav">
     
       <ul class="navbar-nav">
        <li class="nav-item">
         
-       </li>
-        <li class="nav-item">
-          <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link active" id="navbarHome" aria-current="page" href="#" data-uri="/">Home</a>
         </li>
