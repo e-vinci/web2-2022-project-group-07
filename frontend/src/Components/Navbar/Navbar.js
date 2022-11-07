@@ -17,35 +17,27 @@ function renderNavbar() {
   const navbarWrapper = document.querySelector('#navbarWrapper');
   
   const anonymousUserNavbar = `
-<nav class="navbar navbar-expand-lg bg-light bg-transparent fixed ">
-  <a class="navbar-brand " href="./">BeBrain</a>
-    
-    <button class="navbar-toggler navdown" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">BeBrain</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-   
     <div class="collapse navbar-collapse" id="navbarNav">
-    
       <ul class="navbar-nav">
-       <li class="nav-item">
-        
         <li class="nav-item">
-          <a class="nav-link "  aria-current="page" href="#" data-uri="/">Home</a>
+          <a class="nav-link" href="./">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/login">Login</a>
+          <a class="nav-link" href="#">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/register">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/game">GameOne</a>
+          <a class="nav-link" href="#">GameOne</a>
         </li>
       </ul>
-      
     </div>
-  
-  </nav>
+  </div>
+</nav>
 
   `;
   
