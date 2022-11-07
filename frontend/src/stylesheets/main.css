@@ -2,21 +2,19 @@ body {
     background-image: url("../img/sky.jpg");
     color: aqua;
     font-family: "Times New Roman", Times, serif;
-    font-size: 1.4vw;
+    font-size: 1.7em;
 }
 
 /*NavBar*/
 .nav-link {
-    margin-left: 210px;
+    margin-left: 20em;
     margin-top: 25px;
     color: #7894E1;
-
-}
-.nav-link {
     font-family: 'Open Sans', sans-serif;
     font-size: 1vw;
     font-weight: bolder;
     text-transform: uppercase;
+
   }
 .nav-link:hover {
     border-radius:70%;
@@ -31,16 +29,17 @@ body {
 
 .navbar-brand {
     font-weight: 800;
-    font-size: 24px;
-    margin-left: auto;
-    margin-top: auto;
+    font-size: 2em;
+    margin-left: 3em;
+    margin-top: 0,8em;
     color: #7894E1;
     width: 100%;
     max-width: 115px;
-    
+
 }
 .fixed{
     position: fixed;
+    
 }
 .navbar-brand:hover {
     border-radius:70%;
