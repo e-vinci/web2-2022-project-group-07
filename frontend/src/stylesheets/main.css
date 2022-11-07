@@ -61,9 +61,6 @@ body {
     border-color:rgba(120, 148, 225,0.7);
 }
 
-li{
-    font-size: 1.5em;
-}
 .text-component {
     width:100%;
     position:relative;
