@@ -5,73 +5,79 @@ body {
     font-size: 1.7em;
 }
 
-/*NavBar*/
 .nav-link {
-    margin-left: 20em;
-    margin-top: 25px;
+    margin-left: 5em;
+    margin-top: 1em;
     color: #7894E1;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1vw;
+    font-size: 0.7em;
     font-weight: bolder;
     text-transform: uppercase;
 
   }
 .nav-link:hover {
     border-radius:70%;
-    border-bottom: 5px solid #4099ff;
-    border-left: 1px solid #4099ff;
-    border-right: 1px solid #4099ff;
+    border-bottom: 0.1em solid #7894E1;
+    border-left: 0.03em solid #7894E1;
+    border-right: 0.03em solid #7894E1;
     color:#fff!important;
 }
+.nav-link:visited {
+    color: #7894E1;
+}
 
-
-
+.nav-link:active {
+    color: #7894E1;
+}
 
 .navbar-brand {
     font-weight: 800;
     font-size: 2em;
-    margin-left: 3em;
-    margin-top: 0.8em;
+    margin-top: 0,8em;
     color: #7894E1;
-    width: 100%;
-    max-width: 115px;
 
 }
+
 .fixed{
     position: fixed;
     
 }
+
 .navbar-brand:hover {
-    border-radius:70%;
-    border-bottom: 5px solid #4099ff;
-    border-left: 1px solid #4099ff;
-    border-right: 1px solid #4099ff;
+    border-radius:50%;
+    border-bottom: 0.1em solid #7894E1;
+    border-left: 0.03em solid #7894E1;
+    border-right: 0.03em solid #7894E1;
     color:#fff!important;
 }
+
 .navdown{
-    background-color: #4099ff;
+    background-color: #7894E1;
 }
 
+.navbar-toggler{
+    background-color: rgba(120, 148, 225,0.8);
+    border-radius: 0.5;
+    border-color:rgba(120, 148, 225,0.9);
+}
 
+.navbar-toggler:hover{
+    background-color: rgba(120, 148, 225,0.5);
+    border-radius: 0.5;
+    border-color:rgba(120, 148, 225,0.7);
+}
 
 .text-component {
-
     width:100%;
     position:relative;
-
 	font-weight: 700;
-
 	-webkit-background-clip: text;
 	color: transparent;
 	background-image: url('../img/ground.jpg');
 }
 
-
 .td-figure {
     perspective: 1500px;
-}
-
-.td-figure {
     position: fixed;
     top: 165px;
     left: 800px;
@@ -92,9 +98,6 @@ img {
     display: block;
     margin-left: auto;
 }
-
-
-
 
 .p-5 {
     caret-color: blue;
