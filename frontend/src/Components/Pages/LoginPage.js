@@ -1,5 +1,6 @@
 import { getRememberMe, setAuthenticatedUser, setRememberMe } from '../../utils/auths';
 import { clearPage, renderPageTitle } from '../../utils/render';
+import brainstorming from '../../img/brainstorming.gif';
 import Navbar from '../Navbar/Navbar';
 import Navigate from '../Router/Navigate';
 
@@ -104,6 +105,15 @@ function renderRegisterForm() {
   button1.type = 'submit';
   button1.textContent = 'Login';
   cardBody.appendChild(button1);
+
+
+  
+
+  const gifImg = document.createElement('img');
+  gifImg.src = brainstorming;
+  gifImg.className = 'imgGif';
+  
+  cardBody.appendChild(gifImg);
 
 
   cardBody.addEventListener('submit', onLogin);

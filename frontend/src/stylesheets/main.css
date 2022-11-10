@@ -69,27 +69,11 @@ body {
 
 .text-component {
     width:100%;
-    position:relative;
-	font-weight: 700;
 	-webkit-background-clip: text;
 	color: transparent;
 	background-image: url('../img/ground.jpg');
 }
 
-.td-figure {
-    perspective: 1500px;
-    position: fixed;
-    top: 165px;
-    left: 800px;
-    border-radius: 50%;
-}
-
-.td-figure img{
-    max-height: 2000px;
-    max-width: 550px;
-    object-fit: cover;
-    border-radius: 50%;
-}
 
 img {
     justify-content: center;
@@ -97,6 +81,7 @@ img {
     height: auto;
     display: block;
     margin-left: auto;
+    margin-top: 3em;
 }
 
 .p-5 {
@@ -142,4 +127,11 @@ img {
 
 .vh-100 {
     padding-top: 6%;
+}
+
+/* brainstorming gif */
+.imgGif {
+    margin-top: -22%;
+    max-width: 20%;
+    transform: scaleX(-1);
 }
