@@ -40,7 +40,7 @@ body {
 
 }
 
-.fixed{
+.navbar {
     position: fixed;
     
 }
@@ -103,4 +103,45 @@ img {
 
 .p-5 {
     caret-color: blue;
+}
+
+
+
+
+/*LoginTest*/
+.card {
+    background-color: rgba(255, 255, 255,0.7);
+}
+
+.mb-5 {
+    color: #8278e1;
+    font-weight: bolder;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.form-label {
+    color: #8278e1;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.form-check-label {
+    color: #8278e1;
+    font-size: smaller;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.btn {
+    background-color: rgb(248, 153, 58);
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgba(240, 148, 56, 0.75);
+}
+
+.vh-100 {
+    padding-top: 6%;
 }
