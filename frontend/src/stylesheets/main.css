@@ -1,6 +1,6 @@
 body {
     background-image: url("../img/sky.jpg");
-    color: aqua;
+    color: #7894E1;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.7em;
 }
@@ -21,11 +21,7 @@ body {
     border-right: 0.03em solid #7894E1;
     color:#fff!important;
 }
-.nav-link:visited {
-    color: #7894E1;
-}
-
-.nav-link:active {
+.nav-link:visited .nav-link:active {
     color: #7894E1;
 }
 
@@ -96,20 +92,20 @@ img {
 }
 
 .mb-5 {
-    color: #8278e1;
+    color: #7894E1;
     font-weight: bolder;
     font-size: 2em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 .form-label {
-    color: #8278e1;
+    color: #7894E1;
     font-weight: bolder;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 .form-check-label {
-    color: #8278e1;
+    color: #7894E1;
     font-size: smaller;
     font-weight: bolder;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
