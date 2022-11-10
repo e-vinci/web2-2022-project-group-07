@@ -15,8 +15,6 @@ body {
     text-transform: uppercase;
 
   }
-
-
 .nav-link:hover {
     border-radius:70%;
     border-bottom: 0.1em solid #7894E1;
