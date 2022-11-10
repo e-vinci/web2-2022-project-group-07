@@ -13,7 +13,6 @@ body {
     font-size: 0.7em;
     font-weight: bolder;
     text-transform: uppercase;
-
   }
 .nav-link:hover {
     border-radius:70%;
@@ -35,12 +34,11 @@ body {
     font-size: 2em;
     margin-top: 0,8em;
     color: #7894E1;
-
 }
 
 .navbar {
     position: fixed;
-    
+    z-index: 10;
 }
 
 .navbar-brand:hover {
@@ -59,6 +57,7 @@ body {
     background-color: rgba(120, 148, 225,0.8);
     border-radius: 0.5;
     border-color:rgba(120, 148, 225,0.9);
+    z-index: 10;
 }
 
 .navbar-toggler:hover{
@@ -127,6 +126,7 @@ img {
 
 .vh-100 {
     padding-top: 6%;
+    z-index: 1;
 }
 
 /* brainstorming gif */
