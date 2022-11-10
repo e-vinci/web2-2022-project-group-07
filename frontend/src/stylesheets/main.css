@@ -33,7 +33,7 @@ body {
 .navbar-brand {
     font-weight: 800;
     font-size: 2em;
-    margin-top: 0,8em;
+    margin-top: 0.8em;
     color: #7894E1;
 
 }
@@ -57,13 +57,13 @@ body {
 
 .navbar-toggler{
     background-color: rgba(120, 148, 225,0.8);
-    border-radius: 0.5;
+    border-radius: 0.5%;
     border-color:rgba(120, 148, 225,0.9);
 }
 
 .navbar-toggler:hover{
     background-color: rgba(120, 148, 225,0.5);
-    border-radius: 0.5;
+    border-radius: 0.5%;
     border-color:rgba(120, 148, 225,0.7);
 }
 
