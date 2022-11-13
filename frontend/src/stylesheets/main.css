@@ -1,6 +1,6 @@
 body {
     background-image: url("../img/sky.jpg");
-    color: aqua;
+    color: #7894E1;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.7em;
 }
@@ -13,7 +13,6 @@ body {
     font-size: 0.7em;
     font-weight: bolder;
     text-transform: uppercase;
-
   }
 .nav-link:hover {
     border-radius:70%;
@@ -22,25 +21,25 @@ body {
     border-right: 0.03em solid #7894E1;
     color:#fff!important;
 }
-.nav-link:visited {
+.nav-link:visited{
     color: #7894E1;
 }
 
-.nav-link:active {
+.nav-link:focus {
     color: #7894E1;
 }
+
 
 .navbar-brand {
     font-weight: 800;
     font-size: 2em;
     margin-top: 0.8em;
     color: #7894E1;
-
 }
 
-.fixed{
+.navbar {
     position: fixed;
-    
+    z-index: 10;
 }
 
 .navbar-brand:hover {
@@ -59,6 +58,7 @@ body {
     background-color: rgba(120, 148, 225,0.8);
     border-radius: 0.5%;
     border-color:rgba(120, 148, 225,0.9);
+    z-index: 10;
 }
 
 .navbar-toggler:hover{
@@ -69,27 +69,11 @@ body {
 
 .text-component {
     width:100%;
-    position:relative;
-	font-weight: 700;
 	-webkit-background-clip: text;
 	color: transparent;
 	background-image: url('../img/ground.jpg');
 }
 
-.td-figure {
-    perspective: 1500px;
-    position: fixed;
-    top: 165px;
-    left: 800px;
-    border-radius: 50%;
-}
-
-.td-figure img{
-    max-height: 2000px;
-    max-width: 550px;
-    object-fit: cover;
-    border-radius: 50%;
-}
 
 img {
     justify-content: center;
@@ -97,8 +81,140 @@ img {
     height: auto;
     display: block;
     margin-left: auto;
+    margin-top: 3em;
 }
 
 .p-5 {
     caret-color: blue;
+}
+
+
+
+
+/*LoginTest*/
+.card {
+    background-color: rgba(255, 255, 255,0.7);
+}
+
+.mb-5 {
+    color: #7894E1;
+    font-weight: bolder;
+    font-size: 2em;
+    text-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.75);
+}
+
+.form-label {
+    color: #7894E1;
+    font-weight: bolder;
+    text-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.75);
+}
+
+.form-check-label {
+    color: #7894E1;
+    font-size: smaller;
+    font-weight: bolder;
+    text-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.75);
+}
+
+.btn {
+    background-color: rgb(248, 153, 58);
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgba(240, 148, 56, 0.75);
+}
+
+.vh-100 {
+    padding-top: 6%;
+    z-index: 1;
+}
+
+/* brainstorming gif */
+.imgGif {
+    margin-top: -22%;
+    max-width: 20%;
+    transform: scaleX(-1);
+}
+
+/* ReflexGame */
+
+.reflexeGame {
+    padding-top: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.headerReflexion h1 {
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+.navigation h2 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+}
+
+.navigation p{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+
+.navigation p span {
+    color: rgb(248, 153, 58);
+}
+
+.canvas-parent {
+    cursor: pointer;
+    width: 100%;
+    height: 300px;
+    background: #7894E1;
+}
+
+.score {
+    width: 100%;
+    height: auto;
+}
+
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.section-2 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 5px solid rgb(248, 153, 58);
+}
+
+.section-2 p {
+    padding: 0px 50px 0px 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.score #startButton{
+    font-size: 24px;
+    margin: 20px auto;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    border: 2px solid white;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(248, 153, 58);
+}
+
+.canvasReflexe {
+    text-align: center;
 }

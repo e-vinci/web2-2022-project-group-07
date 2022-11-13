@@ -1,5 +1,6 @@
 import { getRememberMe, setAuthenticatedUser, setRememberMe } from '../../utils/auths';
 import { clearPage, renderPageTitle } from '../../utils/render';
+import brainstorming from '../../img/brainstorming.gif';
 import Navbar from '../Navbar/Navbar';
 import Navigate from '../Router/Navigate';
 
@@ -11,50 +12,117 @@ const LoginPage = () => {
 
 function renderRegisterForm() {
   const main = document.querySelector('main');
-  const form = document.createElement('form');
-  form.className = 'p-5';
-  const username = document.createElement('input');
-  username.type = 'text';
-  username.id = 'username';
-  username.placeholder = 'username';
-  username.required = true;
-  username.className = 'form-control mb-3';
-  const password = document.createElement('input');
-  password.type = 'password';
-  password.id = 'password';
-  password.required = true;
-  password.placeholder = 'password';
-  password.className = 'form-control mb-3';
-  const submit = document.createElement('input');
-  submit.value = 'Login';
-  submit.type = 'submit';
-  submit.className = 'btn btn-info';
+  const section = document.createElement('section');
+  section.className = 'vh-100';
+  
 
-  const formCheckWrapper = document.createElement('div');
-  formCheckWrapper.className = 'mb-3 form-check';
+  const container = document.createElement('div');
+  container.className = 'container py-5 h-100';
+  section.appendChild(container);
 
-  const rememberme = document.createElement('input');
-  rememberme.type = 'checkbox';
-  rememberme.className = 'form-check-input';
-  rememberme.id = 'rememberme';
+  const row = document.createElement('div');
+  row.className = 'row d-flex justify-content-center align-items-center h-100';
+  container.appendChild(row);
+
+  const col = document.createElement('div');
+  col.className = 'col-12 col-md-8 col-lg-6 col-xl-5';
+  row.appendChild(col);
+
+  const cardShadow = document.createElement('div');
+  cardShadow.className = 'card shadow-2-strong';
+  cardShadow.style = 'border-radius: 1rem;';
+  col.appendChild(cardShadow); 
+
+  const cardBody = document.createElement('div');
+  cardBody.className = 'card-body p-5 text-center';
+  cardShadow.appendChild(cardBody);
+
+  const title = document.createElement('h3');
+  title.className = 'mb-5';
+  title.textContent = 'Login';
+  cardBody.appendChild(title);
+
+  const form = document.createElement('div');
+  form.className = 'form-outline mb-4';
+  cardBody.appendChild(form);
+
+  const name = document.createElement('input');
+  name.type = 'Name';
+  name.id = 'typeEmailX-2';
+  name.className = 'form-control form-control-lg';
+  form.appendChild(name);
+
+  const label = document.createElement('label');
+  label.className = 'form-label';
+  label.for = 'typeEmailX-2';
+  label.textContent = 'Name';
+  form.appendChild(label);
+
+
+  const form2 = document.createElement('div');
+  form2.className = 'form-outline mb-4';
+  cardBody.appendChild(form2);
+
+  const mdp = document.createElement('input');
+  mdp.type = 'password';
+  mdp.id = 'typePasswordX-2';
+  mdp.className = 'form-control form-control-lg';
+  form2.appendChild(mdp);
+
+  const label2 = document.createElement('label');
+  label2.className = 'form-label';
+  label2.for = 'typePasswordX-2';
+  label2.textContent = 'Password';
+  form2.appendChild(label2);
+
+
+  const chekFlex = document.createElement('div');
+  chekFlex.className = 'form-check d-flex justify-content-start mb-4';
+  cardBody.appendChild(chekFlex);
+
+  const chekInput = document.createElement('input');
+  chekInput.className = 'form-check-input';
+  chekInput.type = 'checkbox';
+  chekInput.value = '';
+  chekInput.id = "form1Example3";
+
   const remembered = getRememberMe();
-  rememberme.checked = remembered;
-  rememberme.addEventListener('click', onCheckboxClicked);
+  chekInput.checked = remembered;
+  chekInput.addEventListener('click', onCheckboxClicked);
+  chekFlex.appendChild(chekInput);
 
-  const checkLabel = document.createElement('label');
-  checkLabel.htmlFor = 'rememberme';
-  checkLabel.className = 'form-check-label';
-  checkLabel.textContent = 'Remember me';
 
-  formCheckWrapper.appendChild(rememberme);
-  formCheckWrapper.appendChild(checkLabel);
 
-  form.appendChild(username);
-  form.appendChild(password);
-  form.appendChild(formCheckWrapper);
-  form.appendChild(submit);
-  main.appendChild(form);
-  form.addEventListener('submit', onLogin);
+  /* Remember Me ? */
+  const chekLabel = document.createElement('label');
+  chekLabel.className = 'form-check-label';
+  chekLabel.for = 'form1Example3';
+  chekLabel.textContent = ' Remember Me';
+  chekFlex.appendChild(chekLabel);
+
+  const button1 = document.createElement('button');
+  button1.className = 'btn btn-primary btn-lg btn-block';
+  button1.type = 'submit';
+  button1.textContent = 'Login';
+  cardBody.appendChild(button1);
+
+
+  
+
+  const gifImg = document.createElement('img');
+  gifImg.src = brainstorming;
+  gifImg.className = 'imgGif';
+  
+  cardBody.appendChild(gifImg);
+
+
+  cardBody.addEventListener('submit', onLogin);
+
+  main.appendChild(section);
+
+
+
+  
 }
 
 function onCheckboxClicked(e) {
@@ -64,7 +132,7 @@ function onCheckboxClicked(e) {
 async function onLogin(e) {
   e.preventDefault();
 
-  const username = document.querySelector('#username').value;
+  const username = document.querySelector('#name').value;
   const password = document.querySelector('#password').value;
 
   const options = {
