@@ -2,8 +2,8 @@ html{
     height: 100%;
 }
 body {
-    background: url("../img/stars2.gif"), linear-gradient(to bottom right, black,rgb(1, 1, 45),rgb(3, 3, 102),rgb(1, 1, 45),black);
-    /* background: url("../img/stars2.gif"), radial-gradient(farthest-side at 80% 85%, rgb(3, 3, 102),rgb(3, 3, 65),black); */
+    /* background: url("../img/stars2.gif"), linear-gradient(to bottom right, black,rgb(1, 1, 45),rgb(3, 3, 102),rgb(1, 1, 45),black); */
+    background: url("../img/stars2.gif"), radial-gradient(farthest-side at 80% 85%, rgb(3, 3, 102),rgb(3, 3, 65),black);
     height: 100%;
     color: #7894E1;
     font-family: "Times New Roman", Times, serif;
