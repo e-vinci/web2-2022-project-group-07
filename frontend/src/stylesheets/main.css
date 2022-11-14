@@ -131,10 +131,8 @@ img {
 }
 
 /* brainstorming gif */
-.imgGif {
-    margin-top: -22%;
-    max-width: 20%;
-    transform: scaleX(-1);
+.gif {
+    max-width: 70%;
 }
 
 /* ReflexGame */
