@@ -4,7 +4,7 @@ import NewPage from '../Pages/NewPage';
 import LoginPageOldVersion from '../Pages/LoginPageOldVersion';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
-import ReflexeGame from '../Pages/ReflexeGamePage'
+import ReflexeGame from '../Pages/ReflexeGame';
 
 const routes = {
   '/': HomePage,
@@ -13,6 +13,7 @@ const routes = {
   '/loginOldVersion' : LoginPageOldVersion,
   '/login' : LoginPage,
   '/register': RegisterPage,
+  '/reflexePage' : ReflexeGame,
 };
 
 export default routes;
