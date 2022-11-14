@@ -19,7 +19,7 @@ body {
     border-bottom: 0.1em solid #7894E1;
     border-left: 0.03em solid #7894E1;
     border-right: 0.03em solid #7894E1;
-    color:#fff!important;
+    color:#fff !important;
 }
 .nav-link:visited{
     color: #7894E1;
@@ -33,7 +33,7 @@ body {
 .navbar-brand {
     font-weight: 800;
     font-size: 2em;
-    margin-top: 0,8em;
+    margin-top: 0.8em;
     color: #7894E1;
 }
 
@@ -56,14 +56,14 @@ body {
 
 .navbar-toggler{
     background-color: rgba(120, 148, 225,0.8);
-    border-radius: 0.5;
+    border-radius: 0.5em;
     border-color:rgba(120, 148, 225,0.9);
     z-index: 10;
 }
 
 .navbar-toggler:hover{
     background-color: rgba(120, 148, 225,0.5);
-    border-radius: 0.5;
+    border-radius: 0.5em;
     border-color:rgba(120, 148, 225,0.7);
 }
 
