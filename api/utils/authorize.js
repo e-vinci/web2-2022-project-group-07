@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const jwtSecret = "maxouBebouLePlusBo";
 
-const { Users } = require("../model/users");
+const { Users } = require("../models/users");
 const userModel = new Users();
 
 /**

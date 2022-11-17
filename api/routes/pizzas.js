@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('node:path');
+const path = require('path');
 const { serialize, parse } = require('../utils/json');
 
 const router = express.Router();

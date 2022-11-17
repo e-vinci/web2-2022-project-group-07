@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const { parse, serialize} = require("../utils/json");
-const jsonDbPath = __dirname + "../data/users.json";
+const jsonDbPath = __dirname + "/../data/users.json";
 
 const defaultItems = [
     {
@@ -34,6 +34,21 @@ class Users {
         return items[foundIndex];
     }
 
+    async addOne(body){
+        const items = json.parse(jsonDbPath);
+
+        const hashedPassword = await bcrypt.hash(body.password, saltRounds);
+
+        const newItem = {
+            role: user,
+            username: username,
+            password: hashedPassword,
+        };
+        items.push(newItem);
+        serialize(this.jsonDbPath, items);
+        return newItem;
+    }
+
     async login(username, password){
         const userFound = this.getOneByUsername(username);
         if(!userFound)return;
@@ -54,6 +69,27 @@ class Users {
 
         authenticatedUser.token = token;
         return authenticatedUser;
+    }
+
+    register(username, password){
+        const userFound = this.getOneByUsername(username);
+        if(!userFound)return;
+
+        const newUser = this.addOne({username: username, password: password});
+
+        const authenticatedUser = {
+            username: username,
+            token: "Future signed token",
+        };
+
+        const token = jwt.sign(
+            { username: authenticatedUser.username },
+            jwtSecret,
+            { expiresIn: LIFETIME_JWT },
+        );
+
+        authenticatedUser.token = token;
+        return authenticatedUser; 
     }
 }
 
