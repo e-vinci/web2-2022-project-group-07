@@ -4,7 +4,10 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.7em;
 }
-
+.reflexgame {
+    width: 100px;
+    height: 100px;
+}
 .nav-link {
     margin-left: 5em;
     margin-top: 1em;
