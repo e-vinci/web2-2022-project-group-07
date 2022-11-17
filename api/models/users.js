@@ -73,7 +73,7 @@ class Users {
 
     register(username, password){
         const userFound = this.getOneByUsername(username);
-        if(!userFound)return;
+        if(userFound)return;
 
         const newUser = this.addOne({username: username, password: password});
 

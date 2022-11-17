@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.json({ users: [{ name: 'e-baron' }] });
 });
 
-router.post('/register', async function (req, res, newt) {
+router.post('/register', async function (req, res, next) {
   if (
     !req.body ||
     (req.body.hasOwnProperty('username') && req.body.username.length === 0) ||
