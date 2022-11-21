@@ -47,8 +47,13 @@ const HomePage = () => {
             <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
             <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
             `;
+            isclicked=true;
+        }else {
+            topGames.innerHTML=``;
+            bottomGames.innerHTML=``;
+            isclicked=false;
         }
-        isclicked=true;
+        
 
     });
 };
