@@ -5,8 +5,8 @@ body {
     font-size: 1.7em;
 }
 .dimension-button {
-    width: 35%;
-    height: 35%;
+    width: 4em;
+    height: 4em;
 }
 
 .nav-link {
@@ -86,9 +86,7 @@ body {
     margin-top: 1em;
 
 }
-.dimension-button{
-    object-position: right top;
-}
+
 
 .p-5 {
     caret-color: blue;
