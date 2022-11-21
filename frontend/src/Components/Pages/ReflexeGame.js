@@ -1,19 +1,15 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
-
-const GameStatus = {
-    STOP: 1,
-    START: 2,
-}
+import BouttonBleu from "../../img/button-blue.png"
+import BouttonRouge from "../../img/button-red.png"
+import BouttonVert from "../../img/verte.png"
 
 
 let timeout1;
 let timeout2;
 
-let color = "grey";
-let previousColor = "grey";
+let color = "blue";
 
-
-let statu = GameStatus.STOP;
+let TimeNow;
 
 const reflexepage = () => {
     clearPage();
@@ -51,13 +47,12 @@ function renderReflexePage() {
     const canvasParent = document.createElement('div');
     canvasParent.className = 'canvas-parent';
     canvasParent.id = 'canvasParent';
-    const canvasGame = document.createElement('canvas');
-    canvasGame.id = 'canvasReflexe';
 
+    const buttImg = document.createElement('img');
+    buttImg.src = BouttonBleu;
+    buttImg.className = 'boutton-bleu';
+    buttImg.id = "bouton";
    
-    canvasParent.appendChild(canvasGame);
-    div1.appendChild(canvasParent);
-
 
     const scoreDiv = document.createElement('div');
     scoreDiv.className = 'score';
@@ -65,28 +60,13 @@ function renderReflexePage() {
     const sect1 = document.createElement('div');
     sect1.className = 'section-1';
 
-    const buttStart = document.createElement('button');
-    buttStart.id = 'startButton';
-    buttStart.type = 'button';
-    buttStart.textContent = 'Start Game';
+
     
-    buttStart.addEventListener('click', () => {
-        if ( statu === GameStatus.START ){
-            EndGame();
-            buttStart.innerHTML = "Start Game";
-        } else {
-            StartGame();
-            buttStart.innerHTML = "Stop Game";
-        }
-    })
 
+    canvasParent.appendChild(buttImg);
 
-    canvasGame.addEventListener('click', () => {
-        EndGame();
-        buttStart.innerHTML = "Start Game";
-    })
+    div1.appendChild(canvasParent);
 
-    sect1.appendChild(buttStart);
     scoreDiv.appendChild(sect1);
 
     const sect2 = document.createElement('div');
@@ -104,52 +84,34 @@ function renderReflexePage() {
     scoreDiv.appendChild(sect2);
     div1.appendChild(scoreDiv);
     main.appendChild(div1);
-    previousColor = color;
 
-    const c = document.getElementById("canvasReflexe");
-
-    const centerX = c.width / 2;
-    const centerY = c.height / 2;
-    const radius = 70;
-
-    const ctx = c.getContext("2d");
-    ctx.fillStyle = "rgb(206, 63, 63)";
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = 'grey';
-    ctx.fill();
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = 'grey';
-    color = "grey";
-    ctx.stroke();
+    buttImg.addEventListener('click', () => {
+        if (color === "blue") {
+            StartGame();
+        } else if (color === "red"){
+            pText2.innerHTML = "To fast...";
+            EndGame();
+        } else {
+            const date2 = new Date();
+            const TimeLater = date2.getTime();
+            const PlayTime = (TimeLater - TimeNow);
+            const TimeText = document.getElementById('time-text');
+            TimeText.innerHTML = PlayTime;
+            TimeText.innerHTML += "ms";
+            EndGame();
+        }
+    });
 }
-
-
 
 
 
 function StartGame() {
     const ChangeTime = GetRandomTime(1, 8);
     const EndTime = ChangeTime + 5000;
-    statu = GameStatus.START;
-    previousColor = color;
-    const c = document.getElementById("canvasReflexe");
 
-    const centerX = c.width / 2;
-    const centerY = c.height / 2;
-    const radius = 70;
-
-    const ctx = c.getContext("2d");
-    ctx.fillStyle = "rgb(206, 63, 63)";
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = 'red';
+    const boutton = document.getElementById('bouton');
+    boutton.src = BouttonRouge;
     color = "red";
-    ctx.fill();
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = '#003300';
-    ctx.stroke();
-
     Timeout1Function( ChangeTime );
     Timeout2Function( EndTime );
 }
@@ -157,25 +119,10 @@ function StartGame() {
 function EndGame() {
     clearTimeout(timeout1);
     clearTimeout(timeout2);
-    const c = document.getElementById("canvasReflexe");
-    previousColor = color;
-    const centerX = c.width / 2;
-    const centerY = c.height / 2;
-    const radius = 70;
-
-    const ctx = c.getContext("2d");
-    ctx.fillStyle = "rgb(206, 63, 63)";
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-    ctx.fillStyle = 'grey';
-    ctx.fill();
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = 'grey';
-    color = "grey";
-    ctx.stroke();
-
-    statu = GameStatus.STOP;
-
+    const boutton2 = document.getElementById('bouton');
+    boutton2.src = BouttonBleu;
+    color = "blue";
+   
 }
 
 function GetRandomTime(min, max) {
@@ -187,8 +134,6 @@ function GetRandomTime(min, max) {
 function Timeout2Function(time) {
     timeout2 = setTimeout( () => {
         const TimeText = document.getElementById('time-text');
-        const bouttStart = document.getElementById('startButton');
-        bouttStart.textContent = 'Start Game';
         TimeText.innerHTML = "To slow...";
         EndGame();
     }, time);
@@ -196,43 +141,15 @@ function Timeout2Function(time) {
 
 function Timeout1Function(time) {
     timeout1 = setTimeout( () => {
-        const c = document.getElementById("canvasReflexe");
-        const centerX = c.width / 2;
-        const centerY = c.height / 2;
-        const radius = 70;
-        previousColor = color;
-        const ctx = c.getContext("2d");
-        ctx.fillStyle = "rgb(206, 63, 63)";
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'green';
-        color = "green";
-        ctx.fill();
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#003300';
-        ctx.stroke();
-    
+  
+        const boutton3 = document.getElementById('bouton');
+        boutton3.src = BouttonVert;
+        color = "green";    
 
         const date1 = new Date();
-        const TimeNow = date1.getTime();
+        TimeNow = date1.getTime();
 
-        const canvasArea = document.getElementById('canvasReflexe');
-        canvasArea.addEventListener('click', () => {
-            if (previousColor === "green"){
-                const date2 = new Date();
-                const TimeLater = date2.getTime();
-                const PlayTime = (TimeLater - TimeNow);
-                const TimeText = document.getElementById('time-text');
-                TimeText.innerHTML = PlayTime;
-                TimeText.innerHTML += "ms";
-            } else if (previousColor === "red"){
-                const TimeText = document.getElementById('time-text');
-                TimeText.innerHTML = "To fast...";
-            } else {
-                const TimeText = document.getElementById('time-text');
-                TimeText.innerHTML = "First start the game.";
-            }
-        });
+
     }, time)
 }
 
