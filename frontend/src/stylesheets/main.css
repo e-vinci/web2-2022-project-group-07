@@ -4,10 +4,11 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.7em;
 }
-.reflexgame {
-    width: 100px;
-    height: 100px;
+.dimension-button {
+    width: 35%;
+    height: 35%;
 }
+
 .nav-link {
     margin-left: 5em;
     margin-top: 1em;
@@ -78,21 +79,20 @@ body {
 }
 
 
-img {
-    justify-content: center;
-    max-width: 100%;
-    height: auto;
+#brain{
+    object-position: 50% 50%;
     display: block;
     margin-left: auto;
-    margin-top: 3em;
+    margin-top: 1em;
+
+}
+.dimension-button{
+    object-position: right top;
 }
 
 .p-5 {
     caret-color: blue;
 }
-
-
-
 
 /*LoginTest*/
 .card {
@@ -135,16 +135,10 @@ img {
 
 /* brainstorming gif */
 .gif {
-    max-width: 70%;
-}
-
-/* ReflexGame */
-
-.reflexeGame {
+    max-width: 40%;
     padding-top: 10%;
-    padding-left: 20%;
-    padding-right: 20%;
 }
+
 
 .headerReflexion h1 {
     color: white;
