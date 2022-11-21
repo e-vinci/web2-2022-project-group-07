@@ -6,7 +6,8 @@ body {
 }
 .dimension-button {
     width: 4em;
-    height: 4em;
+    height: 3em;
+    margin: auto;
 }
 
 .nav-link {
@@ -133,7 +134,8 @@ body {
 
 /* brainstorming gif */
 .gif {
-    max-width: 40%;
+    /*let to 32% thanks to that there is no scroll bar*/
+    max-width: 32%;
     padding-top: 10%;
 }
 

@@ -4,17 +4,17 @@ import gamebutton from '../../img/verte.png';
 
 
 const homePage = `
-
-  <div class="col-sm">
+<div class="container-fluid">    
+  <div class="row">
     <section class="padding-x-md padding-y-lg">
-        <div class="grid gap-md items-center">
-            <div id='hide' class="container gif">
+        <div class="col-sm">
+            
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class=" gif">
                 <div class="row " id="topGames">
-                    <p></p>
-                </div>
-                <div class="row">
-                    <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />
-                </div>
+                </div>                
+                <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />                
                 <div class="row" id="bottomGames">
                 <div>
             </div>
@@ -26,6 +26,7 @@ const homePage = `
                 <p>Here you can try to improve your brain level and discover his potential.</p>
             </div>
   </div>
+</div>
 `;
 
 
