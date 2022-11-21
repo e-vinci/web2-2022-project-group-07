@@ -2,11 +2,11 @@ html{
     height: 100%;
 }
 body {
-    /* background: url("../img/stars2.gif"), linear-gradient(to bottom right, black,rgb(1, 1, 45),rgb(3, 3, 102),rgb(1, 1, 45),black); */
-    background: url("../img/stars2.gif"), radial-gradient(farthest-side at 80% 85%, rgb(3, 3, 102),rgb(3, 3, 65),black);
+    background: url("../img/stars2.gif"), linear-gradient(to bottom right, black,rgb(1, 1, 45),rgb(3, 3, 102),rgb(1, 1, 45),black);
+    /* background: url("../img/stars2.gif"), radial-gradient(farthest-side at 80% 85%, rgb(3, 3, 102),rgb(3, 3, 65),black); */
     height: 100%;
     color: #7894E1;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.7em;
 }
 
@@ -24,7 +24,7 @@ body {
     border-bottom: 0.1em solid #7894E1;
     border-left: 0.03em solid #7894E1;
     border-right: 0.03em solid #7894E1;
-    color:#fff !important;
+    color:#b3bfe1 !important;
 }
 .nav-link:visited{
     color: #7894E1;
@@ -52,7 +52,7 @@ body {
     border-bottom: 0.1em solid #7894E1;
     border-left: 0.03em solid #7894E1;
     border-right: 0.03em solid #7894E1;
-    color:#fff!important;
+    color:#b3bfe1!important;
 }
 
 .navdown{
@@ -76,7 +76,9 @@ body {
     width:100%;
 	-webkit-background-clip: text;
 	color: transparent;
-	background-image: url('../img/ground.jpg');
+	background-image: url('../img/giph3.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 
