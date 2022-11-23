@@ -77,7 +77,7 @@ function renderReflexePage() {
 
     const buttImg = document.createElement('img');
     buttImg.src = BouttonBleu;
-    buttImg.className = 'boutton-bleu';
+    buttImg.className = 'bouttonColor';
     buttImg.id = "bouton";
    
 
