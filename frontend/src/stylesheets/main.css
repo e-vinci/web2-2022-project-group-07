@@ -1,6 +1,3 @@
-html{
-    height: 100%;
-}
 body {
     background: url("../img/stars2.gif"), linear-gradient(to bottom right, black,rgb(1, 1, 45),rgb(3, 3, 102),rgb(1, 1, 45),black);
     /* background: url("../img/stars2.gif"), radial-gradient(farthest-side at 80% 85%, rgb(3, 3, 102),rgb(3, 3, 65),black); */
@@ -10,6 +7,11 @@ body {
     font-size: 1.7em;
 }
 .dimension-button {
+    width: 4em;
+    height: 3em;
+    margin: auto;
+}
+.topbutton {
     width: 4em;
     height: 3em;
     margin: auto;
@@ -90,9 +92,10 @@ body {
 #brain{
     object-position: 50% 50%;
     display: block;
-    margin-left: 4em;
-    margin-top: 5em;
+    margin: auto;
+
     width: 70%;
+
 }
 
 .topGames {
@@ -153,6 +156,11 @@ body {
 }
 
 /* brainstorming gif */
+.gif {
+    /*let to 32% thanks to that there is no scroll bar*/
+    max-width: 50%;
+    padding-top: 10%;
+}
 
 .imgGif {
     margin-top: -22%;

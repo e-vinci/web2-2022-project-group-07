@@ -40,8 +40,8 @@ const HomePage = () => {
     menu.addEventListener('click',()=>{
         if(!isclicked) {
             topGames.innerHTML += `
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+            <img class=' topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+            <img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
             `;
             bottomGames.innerHTML += `
             <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
