@@ -11,12 +11,12 @@ const homePage = `
             
         </div>
         <div class="d-flex justify-content-center">
-            <div class=" gif">
-                <div class="row " id="topGames">
+            <div class="gif">
+                <div class="row" id="topGames">
                 </div>                
                 <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />                
                 <div class="row" id="bottomGames">
-                <div>
+                </div>
             </div>
             
         </div>
@@ -40,12 +40,12 @@ const HomePage = () => {
     menu.addEventListener('click',()=>{
         if(!isclicked) {
             topGames.innerHTML += `
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
+            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
             `;
             bottomGames.innerHTML += `
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
-            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid">
+            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+            <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
             `;
             isclicked=true;
         }else {

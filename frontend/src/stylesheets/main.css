@@ -90,9 +90,22 @@ body {
 #brain{
     object-position: 50% 50%;
     display: block;
-    margin-left: auto;
-    margin-top: 1em;
+    margin-left: 4em;
+    margin-top: 5em;
+    width: 70%;
+}
 
+.topGames {
+    padding-top: 30em;
+}
+
+.imgGif {
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-top: 3em;
 }
 
 
@@ -150,8 +163,8 @@ body {
 
 /* ReflexGame */
 .reflexeGame {
-    padding-top: 1%;
-    margin-bottom: 2em;
+    padding-top: -1%;
+    margin-bottom: -3em;
 }
 
 
