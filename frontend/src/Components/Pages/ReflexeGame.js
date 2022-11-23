@@ -20,6 +20,33 @@ const reflexepage = () => {
 
 function renderReflexePage() {
     const main = document.querySelector('main');
+    const section = document.createElement('section');
+    section.className = 'vh-100';
+    
+  
+    const container = document.createElement('div');
+    container.className = 'container py-5 h-100';
+    section.appendChild(container);
+  
+    const row = document.createElement('div');
+    row.className = 'row d-flex justify-content-center align-items-center h-100';
+    container.appendChild(row);
+  
+    const col = document.createElement('div');
+    col.className = 'col-12 col-md-8 col-lg-6 col-xl-5';
+    row.appendChild(col);
+  
+    const cardShadow = document.createElement('div');
+    cardShadow.className = 'card shadow-2-strong';
+    cardShadow.style = 'border-radius: 1rem;';
+    col.appendChild(cardShadow); 
+  
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body p-5 text-center';
+    cardShadow.appendChild(cardBody);
+
+
+
     const div1 = document.createElement('div');
     div1.className = 'reflexeGame';
 
@@ -28,7 +55,7 @@ function renderReflexePage() {
     const titleGame = document.createElement('h1');
     titleGame.textContent = 'Reaction Time Game';
     header.appendChild(titleGame);
-    div1.appendChild(header);
+    cardBody.appendChild(header);
 
     const navi = document.createElement('div');
     navi.className = 'navigation';
@@ -42,7 +69,7 @@ function renderReflexePage() {
     p1.appendChild(greenSpan);
     navi.appendChild(title2);
     navi.appendChild(p1);
-    div1.appendChild(navi);
+    cardBody.appendChild(navi);
 
     const canvasParent = document.createElement('div');
     canvasParent.className = 'canvas-parent';
@@ -65,7 +92,8 @@ function renderReflexePage() {
 
     canvasParent.appendChild(buttImg);
 
-    div1.appendChild(canvasParent);
+    cardBody.appendChild(canvasParent);
+
 
     scoreDiv.appendChild(sect1);
 
@@ -74,16 +102,23 @@ function renderReflexePage() {
 
     const pText = document.createElement('p');
     pText.textContent = 'Your time :';
+    pText.className = 'textYourTime';
     sect2.appendChild(pText);
     const pText2 = document.createElement('p');
+    pText2.className = "timeText";
     pText2.id = 'time-text';
     pText2.textContent = 'NO TIME';
     
     sect2.appendChild(pText2);
 
     scoreDiv.appendChild(sect2);
-    div1.appendChild(scoreDiv);
-    main.appendChild(div1);
+    cardBody.appendChild(scoreDiv);
+
+    section.appendChild(div1);
+    main.appendChild(section);
+
+
+   /* main.appendChild(div1); */
 
     buttImg.addEventListener('click', () => {
         if (color === "blue") {
@@ -134,7 +169,7 @@ function GetRandomTime(min, max) {
 function Timeout2Function(time) {
     timeout2 = setTimeout( () => {
         const TimeText = document.getElementById('time-text');
-        TimeText.innerHTML = "To slow...";
+        TimeText.innerHTML = "Too slow...";
         EndGame();
     }, time);
 }
