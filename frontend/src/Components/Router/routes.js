@@ -6,6 +6,8 @@ import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import ReflexeGame from '../Pages/ReflexeGame';
 
+
+
 const routes = {
   '/': HomePage,
   '/game': GamePage,
