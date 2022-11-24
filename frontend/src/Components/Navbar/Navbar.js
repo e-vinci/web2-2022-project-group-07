@@ -32,7 +32,7 @@ function renderNavbar() {
           <a class="nav-link" href="#" data-uri="/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/reflexePage">reflexeGame</a>
+          <a class="nav-link" href="#" data-uri="/reflexPage">reflexGame</a>
         </li>
       </ul>
     </div>
