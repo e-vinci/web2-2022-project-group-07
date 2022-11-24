@@ -2,3 +2,30 @@
 
 ### Read all users
 GET {{baseUrl}}/users
+
+###login admin
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###login user
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "password": "admin"
+}
+
+### register a user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "password": "bonjour"
+}
