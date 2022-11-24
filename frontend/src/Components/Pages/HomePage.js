@@ -58,16 +58,16 @@ const HomePage = () => {
     menu.addEventListener('click',()=>{
         if(!isclicked) {
             firstGame.innerHTML += `
-            <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop"></a>
-           `;
+                <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop"></a>
+            `;
             secondGame.innerHTML+=`
-            <a href="/reflexPage"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="/reflexPage"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             thirdGame.innerHTML += `
-            <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             lastGame.innerHTML += `
-            <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             isclicked=true;
         }else {
