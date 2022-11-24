@@ -48,19 +48,19 @@ const homePage = `
 const HomePage = () => {
     const main = document.querySelector('main');
     main.innerHTML = homePage;
-    const menu=document.getElementById('brain');
-    const firstGame=document.getElementById('firstGame');
-    const secondGame=document.getElementById('secondGame');
-    const thirdGame=document.getElementById('thirdGame');
-    const lastGame=document.getElementById('lastGame');
+    const menu = document.getElementById('brain');
+    const firstGame = document.getElementById('firstGame');
+    const secondGame = document.getElementById('secondGame');
+    const thirdGame = document.getElementById('thirdGame');
+    const lastGame = document.getElementById('lastGame');
 
-    let isclicked =false;
-    menu.addEventListener('click',()=>{
-        if(!isclicked) {
+    let isclicked = false;
+    menu.addEventListener('click', () => {
+        if (!isclicked) {
             firstGame.innerHTML += `
                 <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
-            secondGame.innerHTML+=`
+            secondGame.innerHTML += `
                 <a href="/reflexPage"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             thirdGame.innerHTML += `
@@ -69,13 +69,13 @@ const HomePage = () => {
             lastGame.innerHTML += `
                 <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
-            isclicked=true;
-        }else {
-            firstGame.innerHTML=``;
-            secondGame.innerHTML=``;
-            thirdGame.innerHTML=``;
-            lastGame.innerHTML=``;
-            isclicked=false;
+            isclicked = true;
+        } else {
+            firstGame.innerHTML = ``;
+            secondGame.innerHTML = ``;
+            thirdGame.innerHTML = ``;
+            lastGame.innerHTML = ``;
+            isclicked = false;
         }
 
 
