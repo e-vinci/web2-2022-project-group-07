@@ -160,7 +160,12 @@ body {
 
 /* brainstorming gif */
 .gif {
-    /*let to 32% thanks to that there is no scroll bar*/
+
+    max-width: 50%;
+    padding-top: 10%;
+}
+.centerPageTracking {
+    margin: auto;
     max-width: 50%;
     padding-top: 10%;
 }
