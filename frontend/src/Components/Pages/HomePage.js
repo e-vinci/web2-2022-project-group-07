@@ -1,6 +1,7 @@
 // import brainWallPaper from '../../img/wallPaperTest.png';
 import rotatingBrain from '../../img/rotatingBrain.gif';
 import gamebutton from '../../img/verte.png';
+import reflexGameButton from '../../img/ReflexGame.gif';
 
 
 const homePage = `
@@ -40,7 +41,7 @@ const HomePage = () => {
     menu.addEventListener('click',()=>{
         if(!isclicked) {
             topGames.innerHTML += `
-            <img class=' topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+            <img class=' topbutton' src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop">
             <img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
             `;
             bottomGames.innerHTML += `
