@@ -6,10 +6,9 @@ import reflexGameButton from '../../img/ReflexGame.gif';
 
 const homePage = `
 <div class="container-fluid">    
-  <div class="row">
-    <section class="padding-x-md padding-y-lg">
-        <div class="col-sm">
-            
+    <div class="row">
+        <div class="col-sm">   
+
         </div>
         <div class="d-flex justify-content-center">
             <div class="gif">
@@ -21,11 +20,9 @@ const homePage = `
                     <div class="col-sm" id="secondGame">
                     </div>
                 </div>    
-                
-                    <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />                
-                
+                    <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />
                 <div class="row">
-                     <div class="col-sm" id="thirdGame">
+                    <div class="col-sm" id="thirdGame">
                     </div>
                     <div class="col-sm">
                     </div>
@@ -33,13 +30,11 @@ const homePage = `
                     </div>
                 </div>
             </div>
-            
         </div>
-    </section>
-    <div class="float-lg-start text-component">
-                <h1>Welcome to BeBrain !</h1>
-                <p>Here you can try to improve your brain level and discover his potential.</p>
-            </div>
+        <div class="float-lg-start text-component">
+            <h1>Welcome to BeBrain !</h1>
+            <p>Here you can try to improve your brain level and discover his potential.</p>
+        </div>
   </div>
 </div>
 `;
