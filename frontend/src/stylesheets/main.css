@@ -96,14 +96,9 @@ body {
     object-position: 50% 50%;
     display: block;
     margin: auto;
-
     width: 70%;
-
 }
 
-.topGames {
-    padding-top: 30em;
-}
 
 .imgGif {
     justify-content: center;
