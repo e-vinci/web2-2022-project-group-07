@@ -93,6 +93,7 @@ body {
 
 
 #brain{
+    cursor: pointer;
     object-position: 50% 50%;
     display: block;
     margin: auto;
