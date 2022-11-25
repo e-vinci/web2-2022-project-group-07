@@ -1,7 +1,7 @@
-// import brainWallPaper from '../../img/wallPaperTest.png';
 import rotatingBrain from '../../img/rotatingBrain.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame.gif';
+/* import { isAuthenticated } from '../../utils/auths'; */
 
 
 const homePage = `
