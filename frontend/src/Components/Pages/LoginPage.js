@@ -54,6 +54,7 @@ function renderRegisterForm() {
 
   const label = document.createElement('label');
   label.className = 'form-label';
+  label.id = 'name';
   label.for = 'typeEmailX-2';
   label.textContent = 'Name';
   form.appendChild(label);
@@ -71,6 +72,7 @@ function renderRegisterForm() {
 
   const label2 = document.createElement('label');
   label2.className = 'form-label';
+  label2.id = 'password';
   label2.for = 'typePasswordX-2';
   label2.textContent = 'Password';
   form2.appendChild(label2);
