@@ -4,6 +4,7 @@ import NewPage from '../Pages/NewPage';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import ReflexGame from '../Pages/ReflexGame';
+import AimClickGame from '../Pages/AimClickGame';
 
 
 
@@ -13,7 +14,8 @@ const routes = {
   '/new': NewPage,
   '/login' : LoginPage,
   '/register': RegisterPage,
-  '/reflexPage' : ReflexGame,
+  '/reflexGame' : ReflexGame,
+  '/aimClickGame' : AimClickGame,
 };
 
 export default routes;
