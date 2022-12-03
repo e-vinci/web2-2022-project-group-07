@@ -1,5 +1,5 @@
 // Variables
-let aimCanvas = new canvas('aim');
+let aimCanvas = new canvas('canvas_aim');
 let cursor = new mouse();
 
 // Setup
@@ -235,23 +235,6 @@ function canvas(canvasId){
     }
 
 }
-function mouse(){
-
-    this.color = "green";
-
-    this.show = function(){
-
-        aimCanvas.ctx.fillStyle = this.color;
-        aimCanvas.ctx.beginPath();
-        aimCanvas.ctx.fillRect(aimCanvas.cursorX, aimCanvas.cursorY, 3, 3);
-        aimCanvas.ctx.fillRect(aimCanvas.cursorX, aimCanvas.cursorY - 15, 3, 10);
-        aimCanvas.ctx.fillRect(aimCanvas.cursorX + 8, aimCanvas.cursorY, 10, 3);
-        aimCanvas.ctx.fillRect(aimCanvas.cursorX, aimCanvas.cursorY+8, 3, 10);
-        aimCanvas.ctx.fillRect(aimCanvas.cursorX - 15, aimCanvas.cursorY, 10, 3);
-        aimCanvas.ctx.closePath();
-    }
-
-}
 
 // Game Mode
 function targetMode(){
@@ -336,19 +319,7 @@ function rand(min, max){
     return Math.round(Math.random() * (max - min) + min);
 
 }
-function sound(){
 
-    this.sound = document.createElement("audio");
-    this.sound.src = "shoot.mp3";
-    this.sound.setAttribute("preload", "auto");
-
-    this.play = function(){
-
-        this.sound.play();
-
-    }
-
-}
 function run(){
 
     aimCanvas.controller();
