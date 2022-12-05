@@ -6,14 +6,17 @@ import bombAsset from '../../assets/bomb.png';
 
 
 const BOMB_KEY = 'bomb';
+let player;
+let cursors;
 
 class GameScene extends Phaser.Scene {
   constructor() {
     super('game-scene');
-    this.player = undefined;
+
     this.cursors = undefined;
     this.scoreLabel = undefined;
     this.gameOver = false;
+
   }
 
   preload() {
@@ -25,7 +28,10 @@ class GameScene extends Phaser.Scene {
   create() {
     this.add.image(400, 300, 'sky').setScale(2);
     this.scoreLabel = this.createScoreLabel(16, 16, 0);
-    this.cursors = this.input.mousePointer.active;
+    player = this.add.circle(400, 300, 50, 0x0000ff);
+    this.physics.add.existing(player,false);
+    cursors = this.input.mousePointer;
+    player.body.setCollideWorldBounds(true);
 
     /* The Collider takes two objects and tests for collision and performs separation against them.
     Note that we could call a callback in case of collision... */
@@ -35,9 +41,10 @@ class GameScene extends Phaser.Scene {
     if (this.gameOver) {
       return;
     }
-
-    console.log(this.input.mousePointer.x, this.input.mousePointer.y);
+      player.body.setVelocity(cursors.x, cursors.y);
+      // console.log(cursors.x, cursors.y);
   }
+
 
 
 
@@ -50,7 +57,7 @@ class GameScene extends Phaser.Scene {
     return label;
   }
 
-  hitBomb(player) {
+  /* hitBomb(player) {
     this.scoreLabel.setText(`GAME OVER : ( \nYour Score = ${this.scoreLabel.score}`);
     this.physics.pause();
 
@@ -59,7 +66,7 @@ class GameScene extends Phaser.Scene {
     player.anims.play('turn');
 
     this.gameOver = true;
-  }
+  } */
 }
 
 export default GameScene;
