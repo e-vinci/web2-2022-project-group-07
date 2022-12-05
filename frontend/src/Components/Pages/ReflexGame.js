@@ -101,7 +101,7 @@ function renderReflexePage() {
     sect2.className = 'section-2';
 
     const pText = document.createElement('p');
-    pText.textContent = 'Your time :';
+    pText.textContent = 'Your time (ms) :';
     pText.className = 'textYourTime';
     sect2.appendChild(pText);
     const pText2 = document.createElement('p');
@@ -132,7 +132,6 @@ function renderReflexePage() {
             const PlayTime = (TimeLater - TimeNow);
             const TimeText = document.getElementById('time-text');
             TimeText.innerHTML = PlayTime;
-            TimeText.innerHTML += "ms";
             EndGame();
         }
     });
@@ -176,7 +175,7 @@ function Timeout2Function(time) {
 
 function Timeout1Function(time) {
     timeout1 = setTimeout( () => {
-  
+
         const boutton3 = document.getElementById('bouton');
         boutton3.src = BouttonVert;
         color = "green";    
@@ -184,8 +183,26 @@ function Timeout1Function(time) {
         const date1 = new Date();
         TimeNow = date1.getTime();
 
-
     }, time)
 }
 
+/*
+async function saveScore(e){
+    e.preventDefault();
+
+    const score = document.querySelector('#time-text').textContent;
+
+    const options = {
+        method: 'POST',
+        body: JSON.stringify({
+            score,
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+
+    const response = await fetch('/api/auths/scoreReflexe', options);
+}
+*/
 export default reflexepage;

@@ -66,14 +66,14 @@ function renderRegisterForm() {
 
   const mdp = document.createElement('input');
   mdp.type = 'password';
-  mdp.id = 'typePasswordX-2';
+  mdp.id = 'password';
   mdp.className = 'form-control form-control-lg';
   form2.appendChild(mdp);
 
   const label2 = document.createElement('label');
   label2.className = 'form-label';
-  label2.id = 'password';
-  label2.for = 'typePasswordX-2';
+  label2.id = 'passwordButton';
+  label2.for = 'password';
   label2.textContent = 'Password';
   form2.appendChild(label2);
 
@@ -121,9 +121,6 @@ function renderRegisterForm() {
   cardBody.addEventListener('submit', onLogin);
 
   main.appendChild(section);
-
-
-
   
 }
 

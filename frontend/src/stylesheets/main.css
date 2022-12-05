@@ -224,6 +224,10 @@ body {
     margin-left: 0em;
 }
 
+.textYourTime {
+    font-size: 30px;
+}
+
 .headerReflexion {
     color: #7894E1;
     font-weight: bolder;

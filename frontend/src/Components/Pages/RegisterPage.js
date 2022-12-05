@@ -48,13 +48,13 @@ function renderRegisterForm() {
 
   const name = document.createElement('input');
   name.type = 'Name';
-  name.id = 'typeEmailX-2';
+  name.id = 'username';
   name.className = 'form-control form-control-lg';
   form.appendChild(name);
 
   const label = document.createElement('label');
   label.className = 'form-label';
-  label.for = 'typeEmailX-2';
+  label.for = 'username';
   label.textContent = 'Name';
   form.appendChild(label);
 
@@ -65,13 +65,13 @@ function renderRegisterForm() {
 
   const mdp = document.createElement('input');
   mdp.type = 'password';
-  mdp.id = 'typePasswordX-2';
+  mdp.id = 'passwordId';
   mdp.className = 'form-control form-control-lg';
   form2.appendChild(mdp);
 
   const label2 = document.createElement('label');
   label2.className = 'form-label';
-  label2.for = 'typePasswordX-2';
+  label2.for = 'passwordId';
   label2.textContent = 'Password';
   form2.appendChild(label2);
 
@@ -103,7 +103,7 @@ function renderRegisterForm() {
   const button1 = document.createElement('button');
   button1.className = 'btn btn-primary btn-lg btn-block';
   button1.type = 'submit';
-  button1.textContent = 'Login';
+  button1.textContent = 'Register';
   cardBody.appendChild(button1);
 
 
@@ -112,7 +112,6 @@ function renderRegisterForm() {
   gifImg.className = 'imgGif';
   
   cardBody.appendChild(gifImg);
-
 
   cardBody.addEventListener('submit', onRegister);
 
@@ -128,7 +127,7 @@ async function onRegister(e) {
   e.preventDefault();
 
   const username = document.querySelector('#username').value;
-  const password = document.querySelector('#password').value;
+  const password = document.querySelector('#passwordId').value;
 
   const options = {
     method: 'POST',
@@ -146,8 +145,6 @@ async function onRegister(e) {
   if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
 
   const authenticatedUser = await response.json();
-
-  // console.log('Newly registered & authenticated user : ', authenticatedUser);
 
   setAuthenticatedUser(authenticatedUser);
 
