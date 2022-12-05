@@ -1,4 +1,4 @@
-import rotatingBrain from '../../img/rotatingBrain.gif';
+import rotatingBrain from '../../img/BrainyClick.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame.gif';
 /* import { isAuthenticated } from '../../utils/auths'; */
