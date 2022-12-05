@@ -62,7 +62,7 @@ const HomePage = () => {
                 <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             lastGame.innerHTML += `
-                <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="/fastClick"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             isclicked = true;
         } else {
