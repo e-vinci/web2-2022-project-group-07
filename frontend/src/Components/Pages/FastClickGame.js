@@ -63,7 +63,7 @@ function renderFastPage() {
     title2.textContent = 'Checkout your speed !';
     const p1 = document.createElement('p');
     p1.className = 'information';
-    p1.textContent = 'Click in the area when the color change to ';
+    p1.textContent = 'Click in the area for 5s when the color change to ';
     const greenSpan = document.createElement('span');
     greenSpan.textContent = 'GREEN';
     p1.appendChild(greenSpan);
@@ -125,7 +125,6 @@ function renderFastPage() {
 }
 
 
-
 function StartGame() {
     const boutton = document.getElementById('boutonFast');
     boutton.src = BouttonRouge3;
@@ -157,7 +156,7 @@ function EndGame() {
     boutton2.src = BouttonOver;
     color = "red";
     const TimeText = document.getElementById('time-text');
-    TimeText.innerHTML = click;
+    TimeText.innerHTML = click/5;
     TimeText.innerHTML += " c/sec";
     click = 0;
     setTimeout(Restart, 3000);
