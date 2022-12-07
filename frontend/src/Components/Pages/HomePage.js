@@ -1,6 +1,7 @@
-import rotatingBrain from '../../img/BrainyClick.gif';
+import rotatingBrain from '../../img/BrainClickGreenCrop.gif';
 import gamebutton from '../../img/verte.png';
-import reflexGameButton from '../../img/ReflexGame.gif';
+import reflexGameButton from '../../img/ReflexGame2.gif';
+import fastClick from '../../img/ReflexGame.gif';
 /* import { isAuthenticated } from '../../utils/auths'; */
 
 
@@ -62,7 +63,7 @@ const HomePage = () => {
                 <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             lastGame.innerHTML += `
-                <a href="/fastClick"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="/fastClick"><img class='dimension-button ' src="${fastClick}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             isclicked = true;
         } else {

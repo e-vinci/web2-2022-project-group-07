@@ -243,3 +243,8 @@ body {
     width: 200px;
     margin-top: 2em;
 }
+#btnPop{
+    border-radius: 50%;
+    border-color: aqua;
+    border-width: 0.5em;
+}
