@@ -2,6 +2,7 @@ import rotatingBrain from '../../img/BrainClickGreenCrop.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame2.gif';
 import fastClick from '../../img/ReflexGame.gif';
+
 /* import { isAuthenticated } from '../../utils/auths'; */
 
 
@@ -57,7 +58,7 @@ const HomePage = () => {
                 <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             secondGame.innerHTML += `
-                <a href="/reflexPage"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="/aimClick"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>
             `;
             thirdGame.innerHTML += `
                 <a href="#"><img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>

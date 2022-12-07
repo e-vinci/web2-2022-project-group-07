@@ -248,3 +248,81 @@ body {
     border-color: aqua;
     border-width: 0.5em;
 }
+/* AimClickGame */
+.aimClickGame {
+    padding-top: -1%;
+    margin-bottom: -3em;
+}
+
+
+.headerAimClick h1 {
+    font-weight: bolder;
+    font-size: 100%;
+    color: #7894E1;
+    text-align: center;
+}
+
+.navigation h2 {
+    color: rgb(59, 57, 57);
+    text-align: left;
+    font-weight: 700;
+    font-size: 85%;
+    padding-top: 1em;
+}
+
+.navigation p{
+    color: rgb(59, 57, 57);
+    text-align: left;
+    font-weight: 100;
+    font-size: 61%;
+}
+
+.navigation p span {
+    color: green;
+}
+
+.canvas-parent {
+    cursor: crosshair;
+    width: 60%;
+    height: 200px;
+    margin-left: -1.5em;
+    margin-top: -2em;
+}
+
+.section-2 {
+    width: 80%;
+    margin-top: -4em;
+    margin-left: 5em;
+    padding-right: 2em;
+    color: black;
+    font-weight: 500;
+    font-size: 34px;
+}
+
+.timeText {
+    color: black;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 0em;
+    margin-left: 0em;
+}
+
+.textYourTime {
+    font-size: 30px;
+}
+
+.headerAimClick {
+    color: #7894E1;
+    font-weight: bolder;
+    font-size: 2em;
+    text-shadow: 0.03em 0.03em 0.05em rgba(0, 0, 0, 0.75);
+}
+
+.section-1{
+    padding-top: 0.5em;
+}
+
+.bouttonColor {
+    width: 200px;
+    margin-top: 2em;
+}
