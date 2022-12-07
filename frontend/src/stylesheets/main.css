@@ -201,7 +201,7 @@ body {
 .canvas-parent {
     cursor: crosshair;
     width: 60%;
-    height: 200px;
+    height: 20em;
     margin-left: -1.5em;
     margin-top: -2em;
 }
@@ -213,19 +213,19 @@ body {
     padding-right: 2em;
     color: black;
     font-weight: 500;
-    font-size: 34px;
+    font-size: 5em;
 }
 
 .timeText {
     color: black;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 3em;
     margin-top: 0em;
     margin-left: 0em;
 }
 
 .textYourTime {
-    font-size: 30px;
+    font-size: 3em;
 }
 
 .headerReflexion {
@@ -240,7 +240,7 @@ body {
 }
 
 .bouttonColor {
-    width: 200px;
+    width: 20em;
     margin-top: 2em;
 }
 #btnPop{
