@@ -1,4 +1,4 @@
-import rotatingBrain from '../../img/BrainClickGreenCrop.gif';
+import rotatingBrain from '../../img/GreenClickMe.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame2.gif';
 import fastClick from '../../img/ReflexGame.gif';
