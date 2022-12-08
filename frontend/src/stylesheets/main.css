@@ -91,12 +91,34 @@ body {
     background-size: 100%;
     
 }
-
+.homePageContent{
+    padding-top: 10%;
+    margin: auto;
+}
+.gameButtons{
+    text-align: right;
+}
+#firstGame{
+    margin-right:-0.8em;
+    padding-bottom: 0.5em;
+}
+#secondGame{
+    margin-right: 0.7em;
+    padding-bottom: 0.5em;
+}
+#thirdGame{
+    margin-right:0.5em;
+    padding-bottom: 0.5em;
+}
+#lastGame{
+    margin-right: -0.8em;
+}
 /* brainstorming gif */
 .gif {
     /*let to 32% thanks to that there is no scroll bar*/
-    max-width: 50%;
-    padding-top: 10%;
+    /* max-width: 50%; */
+    text-align: left;
+    padding-right: 10em;
 }
 
 #brain{
@@ -244,7 +266,7 @@ body {
     margin-top: 2em;
 }
 #btnPop{
-    border-radius: 50%;
+    border-radius: 20%;
     border-color: aqua;
     border-width: 0.5em;
 }
