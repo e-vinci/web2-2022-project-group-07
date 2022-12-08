@@ -48,10 +48,10 @@ function renderNavbar() {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/login">Profil</a>
+          <a class="nav-link" href="#" data-uri="/profil">Profil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/register">Logout</a>
+          <a class="nav-link" href="#" data-uri="/logout">Logout</a>
         </li>
       </ul>
     </div>

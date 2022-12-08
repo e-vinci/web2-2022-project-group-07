@@ -113,10 +113,9 @@ function renderRegisterForm() {
   
   cardBody.appendChild(gifImg);
 
-  cardBody.addEventListener('submit', onRegister);
-
   main.appendChild(section);
 
+  button1.addEventListener('click', onRegister);
 }
 
 function onCheckboxClicked(e) {
