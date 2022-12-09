@@ -6,7 +6,7 @@ import bombAsset from '../../assets/bomb.png';
 
 
 const BOMB_KEY = 'bomb';
-let player;
+let circle;
 let cursors;
 
 class GameScene extends Phaser.Scene {
@@ -28,10 +28,13 @@ class GameScene extends Phaser.Scene {
   create() {
     this.add.image(400, 300, 'sky').setScale(2);
     this.scoreLabel = this.createScoreLabel(16, 16, 0);
-    player = this.add.circle(400, 300, 50, 0x0000ff);
-    this.physics.add.existing(player,false);
+    this.matter.world.setBounds().disableGravity();
+    this.circle = this.matter.add.circle(600, 400, 50);
+    this.physics.add.sprite(100, 100, circle);
     cursors = this.input.mousePointer;
-    player.body.setCollideWorldBounds(true);
+    this.circle.setVelocity(3,1);
+
+
 
     /* The Collider takes two objects and tests for collision and performs separation against them.
     Note that we could call a callback in case of collision... */
@@ -41,8 +44,17 @@ class GameScene extends Phaser.Scene {
     if (this.gameOver) {
       return;
     }
-      player.body.setVelocity(cursors.x, cursors.y);
-      // console.log(cursors.x, cursors.y);
+    circle.setVelocity(3,1);
+    circle.setAngularVelocity(0.01);
+    circle.setBounce(1);
+    circle.setFriction(0, 0, 0);
+    circle.setInteractive();
+    // circle.body.velocity.x=(Phaser.Math.RandomXY(cursors, 100).x);
+    // circle.body.velocity.y=(Phaser.Math.RandomXY(cursors, 200).y);
+    // circle.body.deltaMax.x = Phaser.Math.Between(0, 100);
+
+
+   console.log(cursors.input.mousePointer.x, cursors.input.mousePointer.y);
   }
 
 
@@ -57,13 +69,13 @@ class GameScene extends Phaser.Scene {
     return label;
   }
 
-  /* hitBomb(player) {
+  /* hitBomb(circle) {
     this.scoreLabel.setText(`GAME OVER : ( \nYour Score = ${this.scoreLabel.score}`);
     this.physics.pause();
 
-    player.setTint(0xff0000);
+    circle.setTint(0xff0000);
 
-    player.anims.play('turn');
+    circle.anims.play('turn');
 
     this.gameOver = true;
   } */

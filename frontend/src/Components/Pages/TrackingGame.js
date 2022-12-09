@@ -16,9 +16,9 @@ const TrackingGame = () => {
         width: 800,
         height: 500,
         physics: {
-            default: 'arcade',
-            arcade: {
-                debug: false,
+            default: 'matter',
+            matter: {
+                debug: true
             },
         },
         scene: [GameScene],
