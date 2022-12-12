@@ -7,10 +7,10 @@ import Navigate from '../Router/Navigate';
 const LoginPage = () => {
   clearPage();
   renderPageTitle('Login');
-  renderRegisterForm();
+  renderLoginForm();
 };
 
-function renderRegisterForm() {
+function renderLoginForm() {
   const main = document.querySelector('main');
   const section = document.createElement('section');
   section.className = 'vh-100';
