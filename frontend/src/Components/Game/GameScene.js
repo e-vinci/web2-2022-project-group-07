@@ -3,11 +3,12 @@ import ScoreLabel from './ScoreLabel';
 
 import backgroundSky from '../../img/trackingBackground.jpg';
 import bombAsset from '../../assets/bomb.png';
+import trackingButton from '../../img/tracking_button.png';
 
 
 const BOMB_KEY = 'bomb';
-let circle;
 let cursors;
+let circle;
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -22,6 +23,7 @@ class GameScene extends Phaser.Scene {
   preload() {
     this.load.image('sky', backgroundSky);
     this.load.image(BOMB_KEY, bombAsset);
+    this.load.image('trackButton', trackingButton);
 
   }
 
@@ -29,10 +31,23 @@ class GameScene extends Phaser.Scene {
     this.add.image(400, 300, 'sky').setScale(2);
     this.scoreLabel = this.createScoreLabel(16, 16, 0);
     this.matter.world.setBounds().disableGravity();
-    this.circle = this.matter.add.circle(600, 400, 50);
-    this.physics.add.sprite(100, 100, circle);
-    cursors = this.input.mousePointer;
-    this.circle.setVelocity(3,1);
+   // let test = this.add.sprite(180,400, 'trackButton').setScale(0.1);
+
+    circle =this.matter.add.image(10, 30, 'trackButton');
+    circle.setCircle(640);
+    circle.setScale(0.08);
+
+    circle.setAngularVelocity(0.82);
+    circle.setBounce(1.001);
+    circle.setFriction(0, 0, 10);
+
+
+    // player
+
+
+
+
+
 
 
 
@@ -44,17 +59,12 @@ class GameScene extends Phaser.Scene {
     if (this.gameOver) {
       return;
     }
-    circle.setVelocity(3,1);
-    circle.setAngularVelocity(0.01);
-    circle.setBounce(1);
-    circle.setFriction(0, 0, 0);
-    circle.setInteractive();
+
     // circle.body.velocity.x=(Phaser.Math.RandomXY(cursors, 100).x);
     // circle.body.velocity.y=(Phaser.Math.RandomXY(cursors, 200).y);
     // circle.body.deltaMax.x = Phaser.Math.Between(0, 100);
 
-
-   console.log(cursors.input.mousePointer.x, cursors.input.mousePointer.y);
+   console.log(this.matter.bodyBounds.getCenter(circle));
   }
 
 
