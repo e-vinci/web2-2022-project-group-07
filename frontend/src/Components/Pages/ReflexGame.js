@@ -202,7 +202,8 @@ async function saveScore(e){
         },
     };
 
-    const response = await fetch('/api/auths/scoreReflexe', options);
+    const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, options);
+
 }
 */
 export default reflexepage;
