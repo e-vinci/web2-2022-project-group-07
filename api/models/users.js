@@ -26,6 +26,22 @@ class Users {
         serialize(this.jsonDbPath, this.defaultItems);
     }
 
+
+    async getProfil(authenticatedUser){
+        try {
+            const response = await fetch('/api/films');
+        
+            if (!response.ok) {
+              throw new Error(`readAllMovies:: fetch error : ${response.status} : ${response.statusText}`);
+            }
+            const films = await response.json();
+            return films;
+          } catch (err) {
+            console.error('readAllMovies::error: ', err);
+            throw err;
+          }
+    }
+
     getOneByUsername(username){
         const items = parse(this.jsonDbPath);
         const foundIndex = items.findIndex((item) => item.username == username);
@@ -35,13 +51,12 @@ class Users {
     }
 
     async addOne(body){
-        const items = json.parse(jsonDbPath);
+        const items = parse(jsonDbPath);
 
         const hashedPassword = await bcrypt.hash(body.password, saltRounds);
 
         const newItem = {
-            role: user,
-            username: username,
+            username: body.username,
             password: hashedPassword,
         };
         items.push(newItem);
