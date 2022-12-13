@@ -43,13 +43,13 @@ function renderMemory() {
     const memoryPage = `
     <!-- style was inspired by CARBON => https://www.carbon.now.sh -->
     <div class="carbon">
-        <div class="panel">
-            <div class="panel__one circle"></div>
-            <div class="panel__two circle"></div>
-            <div class="panel__three circle">
-                <!--<input type="checkbox" class="toggler3"> -->
-            </div>
-        </div>
+    <div class="panel">
+    <div class="panel__one circle"></div>
+    <div class="panel__two circle"></div>
+    <div class="panel__three circle">
+    <!--<input type="checkbox" class="toggler3"> -->
+                </div>
+                </div>
         <!-- end of panel -->
         <div class="container">
 
@@ -176,7 +176,7 @@ function renderMemory() {
             </h4>
             <span>}</span>
 
-            <button onclick="startGame()">START</button>
+            <button class="startMemory" onclick="startGame()">START</button>
         </div>
 
     </div>
@@ -291,6 +291,7 @@ function startWatching(Seconds, Minutes) {
 		time.innerHTML = `${minutesStr}:${secondsStr}`;
 		if (correctFlips >= 9) {
 			clearInterval(timerObserver);
+            
 			gameWonParty(moves);
 		}
 		// console.log(minutes, secondsStr);
@@ -321,6 +322,7 @@ function startGame() {
 }
 
 function gameWonParty(move) {
+    
 	alert(`You Won with just ${move} moves !`);
 	// NOTE: make a fancy celebration with canvas
 }

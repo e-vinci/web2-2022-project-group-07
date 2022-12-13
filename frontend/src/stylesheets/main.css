@@ -53,7 +53,7 @@ body {
 }
 
 .navbar {
-    position: fixed;
+    position:relative;
     z-index: 10;
 }
 
@@ -278,36 +278,9 @@ body {
 
 
 
-* {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-transform: capitalize;
-    font-family: 'Ubuntu', sans-serif;
-    outline: none;
-  }
+
   
-  body {
   
-    background: -webkit-gradient(linear, left top, right top, from(rgba(4,191,212,0.9)), to(rgba(117,8,161,0.9)));
-  
-    background: -webkit-linear-gradient(left, rgba(4,191,212,0.9) 0%, rgba(117,8,161,0.9) 100%);
-  
-    background: -o-linear-gradient(left, rgba(4,191,212,0.9) 0%, rgba(117,8,161,0.9) 100%);
-  
-    background: linear-gradient(-270deg, rgba(4,191,212,0.9) 0%, rgba(117,8,161,0.9) 100%);
-  }
-  
-  body::after {
-    content: '';
-    background: url('https://svgshare.com/i/7cp.svg');
-    opacity: 0.1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
   
   @-webkit-keyframes rotate {
     from {
@@ -316,14 +289,14 @@ body {
     to {
       -webkit-transform: rotate(8deg);
     }
-  }
+  } 
   .carbon {
-    background: #2a334c;
+    background: rgba(255, 255, 255,0.7);
     border-radius: 4px;
     padding: 10px 30px 10px 30px;
     width: 65%;
     height: 85%;
-    margin: 60px auto 10px auto;
+    margin: 10px auto 10px auto;
     -webkit-transition: all 2s ease-out;
     -o-transition: all 2s ease-out;
     transition: all 2s ease-out;
@@ -358,7 +331,7 @@ body {
     font-weight: 400;
   }
   
-  h4 > span {
+   h4 > span {
     font-family: 'Orbitron', sans-serif;
     color: #27c93f;
   }
@@ -370,7 +343,7 @@ body {
     font-weight: 600;
   }
   
-  button {
+  .startMemory {
     font-family: 'Orbitron', sans-serif;
     border-radius: 3px;
     background-color: #ff5f56;
@@ -386,14 +359,14 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.342);
   }
   
-  button:active {
+  .startMemory:active {
     -webkit-box-shadow: 1px 0px 1px #ff5f56;
             box-shadow: 1px 0px 1px #ff5f56;
     height: 32px;
   }
   
   .panel {
-    background-color: #282a36;
+    background-color: rgba(255, 255, 255,0.7);
     padding-left: 10px;
     border-radius: 10px;
     margin: 15px 0;
@@ -421,7 +394,7 @@ body {
   }
   
   .form {
-    background-color: #282a36;
+    background-color: rgba(255, 255, 255,0.7);
     border-radius: 10px;
     padding: 15px;
     font-size: 10px;
