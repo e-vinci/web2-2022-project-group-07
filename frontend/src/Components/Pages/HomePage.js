@@ -1,43 +1,34 @@
-import rotatingBrain from '../../img/GreenClickMe.gif';
+import rotatingBrain from '../../img/ClickHereBrain.gif';
 import gamebutton from '../../img/verte.png';
-import reflexGameButton from '../../img/ReflexGame2.gif';
-import fastClick from '../../img/ReflexGame.gif';
+import reflexGameButton from '../../img/ReflexGame.gif';
+import fastClick from '../../img/FastClickGame.gif';
 /* import { isAuthenticated } from '../../utils/auths'; */
 
 
 const homePage = `
-<div class="container-fluid">    
-    <div class="row">
-        <div class="col-sm">   
-
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class="gif">
-                <div class="row" >
-                    <div class="col-sm" id="firstGame">
-                    </div>
-                    <div class="col-sm">
-                    </div>
-                    <div class="col-sm" id="secondGame">
-                    </div>
-                </div>    
-                    <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />
-                <div class="row">
-                    <div class="col-sm" id="thirdGame">
-                    </div>
-                    <div class="col-sm">
-                    </div>
-                    <div class="col-sm" id="lastGame">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="float-lg-start text-component">
+  
+    <div class="row align-items-center homePageContent">
+        <div class="col-md align-self-end float-lg-start text-component">   
             <h1>Welcome to BeBrain !</h1>
             <p>Here you can try to improve your brain level and discover his potential.</p>
         </div>
+        <div class="col-sm-3 gameButtons">
+            <div id=firstGame>
+            </div>
+            <div id=secondGame>
+            </div>
+            <div id=thirdGame>
+            </div>
+            <div id=lastGame>
+            </div>
+        </div>
+        <div class="col-md d-flex justify-content-center">
+            <div class="row gif">
+                <img id ='brain' class="img-fluid " src="${rotatingBrain}" alt="Responsive image" />
+            </div>
+        </div>
   </div>
-</div>
+
 `;
 
 
@@ -54,7 +45,7 @@ const HomePage = () => {
     menu.addEventListener('click', () => {
         if (!isclicked) {
             firstGame.innerHTML += `
-                <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button game" className="img-fluid" id="btnPop"></a>
+                <a href="/reflexPage"><img class='topbutton'  src="${reflexGameButton}" alt="button_game" className="img-fluid" id="btnPop"></a>
             `;
             secondGame.innerHTML += `
                 <a href="/reflexPage"><img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop"></a>

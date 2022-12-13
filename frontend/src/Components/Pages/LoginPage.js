@@ -7,14 +7,14 @@ import Navigate from '../Router/Navigate';
 const LoginPage = () => {
   clearPage();
   renderPageTitle('Login');
-  renderRegisterForm();
+  renderLoginForm();
 };
 
-function renderRegisterForm() {
+function renderLoginForm() {
   const main = document.querySelector('main');
   const section = document.createElement('section');
   section.className = 'vh-100';
-  
+
 
   const container = document.createElement('div');
   container.className = 'container py-5 h-100';
@@ -31,7 +31,7 @@ function renderRegisterForm() {
   const cardShadow = document.createElement('div');
   cardShadow.className = 'card shadow-2-strong';
   cardShadow.style = 'border-radius: 1rem;';
-  col.appendChild(cardShadow); 
+  col.appendChild(cardShadow);
 
   const cardBody = document.createElement('div');
   cardBody.className = 'card-body p-5 text-center';
@@ -48,7 +48,7 @@ function renderRegisterForm() {
 
   const name = document.createElement('input');
   name.type = 'Name';
-  name.id = 'typeEmailX-2';
+  name.id = 'username';
   name.className = 'form-control form-control-lg';
   form.appendChild(name);
 
@@ -109,19 +109,20 @@ function renderRegisterForm() {
   cardBody.appendChild(button1);
 
 
-  
+
 
   const gifImg = document.createElement('img');
   gifImg.src = brainstorming;
   gifImg.className = 'imgGif';
-  
+
   cardBody.appendChild(gifImg);
 
 
-  cardBody.addEventListener('submit', onLogin);
+  /* cardBody.addEventListener('submit', onLogin); */
 
   main.appendChild(section);
-  
+
+  button1.addEventListener('click', onLogin);
 }
 
 function onCheckboxClicked(e) {
@@ -131,8 +132,8 @@ function onCheckboxClicked(e) {
 async function onLogin(e) {
   e.preventDefault();
 
-  const username = document.querySelector('#name').value;
-  const password = document.querySelector('#password').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   const options = {
     method: 'POST',
@@ -145,7 +146,7 @@ async function onLogin(e) {
     },
   };
 
-  const response = await fetch('/api/auths/login', options);
+  const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, options);
 
   if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
 
