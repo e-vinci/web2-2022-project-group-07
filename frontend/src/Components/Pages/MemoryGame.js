@@ -282,7 +282,7 @@ function gameWonParty(moves) {
 	// const audio = new Audio('https://loudlinks.rocks/sounds/mp3/magic.mp3');
 	audio.play();
 	// alert(`You Won with just ${moves} moves !`);
-	//NOTE: make a fancy celebration with canvas
+	
 }
 
 box.forEach(el => el.addEventListener('click', flipOnClick));
