@@ -55,7 +55,6 @@ class Users {
         const hashedPassword = await bcrypt.hash(body.password, saltRounds);
 
         const newItem = {
-            id: getNextId(),
             username: body.username,
             password: hashedPassword,
         };

@@ -48,7 +48,7 @@ function renderNavbar() {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" data-uri="/profil">Profil</a>
+          <a class="nav-link" href="/profil" data-uri="/profil">Profil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout" data-uri="/logout">Logout</a>

@@ -29,3 +29,7 @@ Content-Type: application/json
     "username": "maxime",
     "password": "bonjour"
 }
+
+
+### test
+GET {{baseUrl}}/username/1

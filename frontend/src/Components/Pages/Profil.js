@@ -1,10 +1,16 @@
 import { clearPage, renderPageTitle } from '../../utils/render';
 import profilBrain from '../../img/profilBrain.png';
 import { getAuthenticatedUser } from '../../utils/auths';
-/*
 import Navbar from '../Navbar/Navbar';
-import Navigate from '../Router/Navigate';
-*/
+
+
+
+
+const readUsername = async () => {
+  const userSession = getAuthenticatedUser();
+  return userSession.username;
+};
+
 
 const ProfilPage = () => {
   clearPage();
@@ -12,7 +18,7 @@ const ProfilPage = () => {
   renderProfilForm();
 };
 
-function renderProfilForm() {
+async function renderProfilForm() {
     const main = document.querySelector('main');
     
     const container = document.createElement('div');
@@ -35,7 +41,7 @@ function renderProfilForm() {
 
     const nom = document.createElement('h3');
     nom.className = 'mt-2';
-    nom.textContent = "My Username";
+    nom.textContent = await readUsername();
     text.appendChild(nom);
 
     const row = document.createElement('div');
@@ -52,25 +58,24 @@ function renderProfilForm() {
     game1.appendChild(num1);
     row.appendChild(game1);
 
+    const game2 = document.createElement('div');
+    game2.className = 'col-md-4';
+    const title2 = document.createElement('h5');
+    title2.textContent = 'Reaction Time';
+    game2.appendChild(title2);
+    const num2 = document.createElement('span');
+    num2.className = 'num';
+    num2.textContent = 10;
+    game2.appendChild(num2);
+    row.appendChild(game2);
+
 
 
     text.appendChild(row);
     main.appendChild(container);
+
+      
+  Navbar();
 }
 
-/*
-
-const readUsername = async () => {
-  const userSession = getAuthenticatedUser();
-  userSession.
-  const response = await fetch(`api/user/username`);
-
-  if (!response.ok) {
-    throw new Error(`readUsername:: fetch error : ${response.status} : ${response.statusText}`);
-  }
-  const user = await response.json();
-  return user.username;
-
-};
-*/
 export default ProfilPage;
