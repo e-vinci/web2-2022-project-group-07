@@ -5,6 +5,7 @@ import RegisterPage from '../Pages/RegisterPage';
 import ReflexGame from '../Pages/ReflexGame';
 import FastClickGame from '../Pages/FastClickGame';
 import Logout from '../Logout/Logout';
+import Profil from '../Pages/Profil';
 
 
 
@@ -16,6 +17,7 @@ const routes = {
   '/reflexPage' : ReflexGame,
   '/fastClick' : FastClickGame,
   '/logout': Logout,
+  '/profil': Profil,
 };
 
 export default routes;

@@ -12,7 +12,7 @@ const jsonDbPath = __dirname + "/../data/users.json";
 
 const defaultItems = [
     {
-        role: "admin",
+        id: 1,
         username: "admin",
         password: "$2b$10$RqcgWQT/Irt9MQC8UfHmjuGCrQkQNeNcU6UtZURdSB/fyt6bMWARa",
     },
@@ -26,20 +26,19 @@ class Users {
         serialize(this.jsonDbPath, this.defaultItems);
     }
 
+    getNextId(){
+        const items = parse(this.jsonDbPath);
+        let nextId;
+        if(items.length === 0)nextId = 1;
+        else nextId = items[items.length-1].id + 1;
+    }
 
-    async getProfil(authenticatedUser){
-        try {
-            const response = await fetch('/api/films');
-        
-            if (!response.ok) {
-              throw new Error(`readAllMovies:: fetch error : ${response.status} : ${response.statusText}`);
-            }
-            const films = await response.json();
-            return films;
-          } catch (err) {
-            console.error('readAllMovies::error: ', err);
-            throw err;
-          }
+    getOneById(id){
+        const items = parse(this.jsonDbPath);
+        const foundIndex = items.findIndex((item) => item.id == id);
+        if(foundIndex < 0)return;
+
+        return items[foundIndex];
     }
 
     getOneByUsername(username){
