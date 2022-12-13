@@ -1,155 +1,13 @@
-const memoryPage = `
-<!-- style was inspired by CARBON => https://www.carbon.now.sh -->
-<div class="carbon">
-    <div class="panel">
-        <div class="panel__one circle"></div>
-        <div class="panel__two circle"></div>
-        <div class="panel__three circle">
-            <!--<input type="checkbox" class="toggler3"> -->
-        </div>
-    </div>
-    <!-- end of panel -->
-    <div class="container">
+import { clearPage, renderPageTitle } from "../../utils/render";
 
-        <div class="box box1">
-            <div class="box backside">
-                <i class="far fa-gem"></i>
-            </div>
-        </div>
-
-        <div class="box box2">
-            <div class="box backside">
-                <i class="far fa-gem"></i>
-            </div>
-        </div>
-
-        <div class="box box3">
-            <div class="box backside">
-                <i class="fas fa-bomb"></i>
-            </div>
-        </div>
-
-        <div class="box box4">
-            <div class="box backside">
-                <i class="fas fa-bomb"></i>
-            </div>
-        </div>
-
-        <div class="box box5">
-            <div class="box backside">
-                <i class="fas fa-dizzy"></i>
-            </div>
-        </div>
-
-        <div class="box box6">
-            <div class="box backside">
-                <i class="fas fa-dizzy"></i>
-            </div>
-        </div>
-
-        <div class="box box7">
-            <div class="box backside">
-                <i class="fas fa-cannabis"></i>
-            </div>
-        </div>
-
-        <div class="box box8">
-            <div class="box backside">
-                <i class="fas fa-cannabis"></i>
-            </div>
-        </div>
-
-        <div class="box box9">
-            <div class="box backside">
-                <i class="fas fa-helicopter"></i>
-            </div>
-        </div>
-
-        <div class="box box10">
-            <div class="box backside">
-                <i class="fas fa-helicopter"></i>
-            </div>
-        </div>
-
-        <div class="box box11">
-            <div class="box backside">
-                <i class="fas fa-chess"></i>
-            </div>
-        </div>
-
-        <div class="box box12">
-            <div class="box backside">
-                <i class="fas fa-chess"></i>
-            </div>
-        </div>
-
-        <div class="box box13">
-            <div class="box backside">
-                <i class="fab fa-js-square"></i>
-            </div>
-        </div>
-
-        <div class="box box14">
-            <div class="box backside">
-                <i class="fab fa-js-square"></i>
-            </div>
-        </div>
-
-        <div class="box box15">
-            <div class="box backside">
-                <i class="fas fa-cocktail"></i>
-            </div>
-        </div>
-
-        <div class="box box16">
-            <div class="box backside">
-                <i class="fas fa-cocktail"></i>
-            </div>
-        </div>
-
-        <div class="box box17">
-            <div class="box backside">
-                <i class="fas fa-dice"></i>
-            </div>
-        </div>
-
-        <div class="box box18">
-            <div class="box backside">
-                <i class="fas fa-dice"></i>
-            </div>
-        </div>
-
-    </div>
-</div>
-<!-- end of MAIN   -->
-<div class="carbon tabbar">
-
-    <div>
-        <span>{</span>
-        <h4>
-            <span>moves:</span>
-            <span class="counter"> 0 </span>,
-            <span>time_elapsed:</span>
-            <span class="time">00:00</span>
-        </h4>
-        <span>}</span>
-
-        <button onclick="startGame()">START</button>
-    </div>
-
-</div>
-<!-- <p>by Roektman.com</p> -->
-   
-
-`;
-
-
-const MemoryPage = () => {
-    const main = document.querySelector('main');
-    main.innerHTML = memoryPage;
-    
-};
-
+let correctFlips = 0;
+let lastFlipped = [];
+let moves = 0;
+let seconds = 0;
+let minutes = 0;
+let secondsStr = '';
+let minutesStr = '';
+let timerObserver;
 
 const cards = {
 	box1: 'box2',
@@ -172,28 +30,202 @@ const cards = {
 	box18: 'box17'
 };
 
-const carbon = document.querySelector('.carbon');
-const time = document.querySelector('.time');
-const counter = document.querySelector('.counter');
-const circle1 = document.querySelector('.panel__one');
-const circle2 = document.querySelector('.panel__two');
-const circle3 = document.querySelector('.panel__three');
-const container = document.querySelector('.container');
+const MemoryPage = () => {
+    clearPage();
+    renderPageTitle('Memory Game');
+   renderMemory();
+    startGame();
+};
+
+function renderMemory() {
+    const main = document.querySelector('main');
+
+    const memoryPage = `
+    <!-- style was inspired by CARBON => https://www.carbon.now.sh -->
+    <div class="carbon">
+        <div class="panel">
+            <div class="panel__one circle"></div>
+            <div class="panel__two circle"></div>
+            <div class="panel__three circle">
+                <!--<input type="checkbox" class="toggler3"> -->
+            </div>
+        </div>
+        <!-- end of panel -->
+        <div class="container">
+
+            <div class="box box1">
+                <div class="box backside">
+                    <i class="far fa-gem"></i>
+                </div>
+            </div>
+
+            <div class="box box2">
+                <div class="box backside">
+                    <i class="far fa-gem"></i>
+                </div>
+            </div>
+
+            <div class="box box3">
+                <div class="box backside">
+                    <i class="fas fa-bomb"></i>
+                </div>
+            </div>
+
+            <div class="box box4">
+                <div class="box backside">
+                    <i class="fas fa-bomb"></i>
+                </div>
+            </div>
+
+            <div class="box box5">
+                <div class="box backside">
+                    <i class="fas fa-dizzy"></i>
+                </div>
+            </div>
+
+            <div class="box box6">
+                <div class="box backside">
+                    <i class="fas fa-dizzy"></i>
+                </div>
+            </div>
+
+            <div class="box box7">
+                <div class="box backside">
+                    <i class="fas fa-cannabis"></i>
+                </div>
+            </div>
+
+            <div class="box box8">
+                <div class="box backside">
+                    <i class="fas fa-cannabis"></i>
+                </div>
+            </div>
+
+            <div class="box box9">
+                <div class="box backside">
+                    <i class="fas fa-helicopter"></i>
+                </div>
+            </div>
+
+            <div class="box box10">
+                <div class="box backside">
+                    <i class="fas fa-helicopter"></i>
+                </div>
+            </div>
+
+            <div class="box box11">
+                <div class="box backside">
+                    <i class="fas fa-chess"></i>
+                </div>
+            </div>
+
+            <div class="box box12">
+                <div class="box backside">
+                    <i class="fas fa-chess"></i>
+                </div>
+            </div>
+
+            <div class="box box13">
+                <div class="box backside">
+                    <i class="fab fa-js-square"></i>
+                </div>
+            </div>
+
+            <div class="box box14">
+                <div class="box backside">
+                    <i class="fab fa-js-square"></i>
+                </div>
+            </div>
+
+            <div class="box box15">
+                <div class="box backside">
+                    <i class="fas fa-cocktail"></i>
+                </div>
+            </div>
+
+            <div class="box box16">
+                <div class="box backside">
+                    <i class="fas fa-cocktail"></i>
+                </div>
+            </div>
+
+            <div class="box box17">
+                <div class="box backside">
+                    <i class="fas fa-dice"></i>
+                </div>
+            </div>
+
+            <div class="box box18">
+                <div class="box backside">
+                    <i class="fas fa-dice"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end of MAIN   -->
+    <div class="carbon tabbar">
+
+        <div>
+            <span>{</span>
+            <h4>
+                <span>moves:</span>
+                <span class="counter"> 0 </span>,
+                <span>time_elapsed:</span>
+                <span class="time">00:00</span>
+            </h4>
+            <span>}</span>
+
+            <button onclick="startGame()">START</button>
+        </div>
+
+    </div>
+    <!-- <p>by Roektman.com</p> -->
+    
+
+    `;
+    main.innerHTML = memoryPage;
+
+
+    const circle1 = document.querySelector('.panel__one');
+    const circle2 = document.querySelector('.panel__two');
+    const circle3 = document.querySelector('.panel__three');
+    const container = document.querySelector('.container');
+    const time = document.querySelector('.time');
+    const carbon = document.querySelector('.carbon');
+    const counter = document.querySelector('.counter');
+
+    circle1.addEventListener('click', () => {
+        clearInterval(timerObserver);
+        container.innerHTML = '';
+        time.innerHTML = 'XX:XX';
+        counter.innerHTML = '0';
+    });
+    
+    circle2.addEventListener('click', () => {
+        carbon.style.height = '85%';
+        carbon.style.width = '65%';
+    });
+    // green circle
+    circle3.addEventListener('click', () => {
+        carbon.style.height = '90%';
+        carbon.style.width = '90%';
+    });
+    
+}
+
+
+
+
 const box = Array.from(document.querySelectorAll('.box'));
-const audio = new Audio('https://loudlinks.rocks/sounds/mp3/magic.mp3');
 
-let correctFlips = 0;
-let lastFlipped = [];
-let moves = 0;
-let seconds = 0;
-let minutes = 0;
-let secondsStr = '';
-let minutesStr = '';
-let timerObserver;
 
-container.innerHTML = '';
+
+
+// container.innerHTML = '';
 
 function flipOnClick(e) {
+    const counter = document.querySelector('.counter');
 	moves+=1;
 	counter.innerHTML = moves;
 	const element = e.target;
@@ -232,6 +264,7 @@ function compareFlipped(array) {
 }
 
 function spreadCards(array) {
+    const container = document.querySelector('.container');
 	const newArr = array.filter(el => array.indexOf(el) % 2 === 0);
 	while (newArr.length > 0) {
 		const num = Math.floor(Math.random() * newArr.length);
@@ -242,23 +275,32 @@ function spreadCards(array) {
 	}
 }
 
-function startWatching(seconds, minutes) {
+function startWatching(Seconds, Minutes) {
+    const time = document.querySelector('.time');
+    let minute = Minutes;
+    let second = Seconds;
 	timerObserver = setInterval(() => {
-		seconds > 58 ? ((minutes += 1), (seconds = 0)) : (seconds += 1);
-		secondsStr = seconds > 9 ? `${seconds}` : `0${seconds}`;
-		minutesStr = minutes > 9 ? `${minutes}` : `0${minutes}`;
+		if(Seconds > 58) {
+            minute += 1;
+            second = 0;
+        } else{ 
+            second += 1;
+        }
+		secondsStr = second > 9 ? `${second}` : `0${second}`;
+		minutesStr = minute > 9 ? `${minute}` : `0${minute}`;
 		time.innerHTML = `${minutesStr}:${secondsStr}`;
 		if (correctFlips >= 9) {
-			audio.play();
 			clearInterval(timerObserver);
 			gameWonParty(moves);
-			return;
 		}
 		// console.log(minutes, secondsStr);
 	}, 1000);
 }
 
 function startGame() {
+    const counter = document.querySelector('.counter');
+    const time = document.querySelector('.time');
+    const container = document.querySelector('.container');
 	correctFlips = 0;
 	lastFlipped = [];
 	moves = 0;
@@ -278,31 +320,13 @@ function startGame() {
 	startWatching(seconds, minutes);
 }
 
-function gameWonParty(moves) {
-	// const audio = new Audio('https://loudlinks.rocks/sounds/mp3/magic.mp3');
-	audio.play();
-	// alert(`You Won with just ${moves} moves !`);
-	//NOTE: make a fancy celebration with canvas
+function gameWonParty(move) {
+	alert(`You Won with just ${move} moves !`);
+	// NOTE: make a fancy celebration with canvas
 }
 
 box.forEach(el => el.addEventListener('click', flipOnClick));
 
-circle1.addEventListener('click', (e) => {
-	clearInterval(timerObserver);
-	container.innerHTML = '';
-	time.innerHTML = 'XX:XX';
-	counter.innerHTML = '0';
-});
-
-circle2.addEventListener('click', (e) => {
-	carbon.style.height = '85%';
-	carbon.style.width = '65%';
-});
-//green circle
-circle3.addEventListener('click', (e) => {
-	carbon.style.height = '90%';
-	carbon.style.width = '90%';
-});
 
 
 
