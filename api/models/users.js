@@ -13,7 +13,6 @@ const jsonDbPath = __dirname + "/../data/users.json";
 const defaultItems = [
     {
         id: 1,
-        role: "admin",
         username: "admin",
         password: "$2b$10$RqcgWQT/Irt9MQC8UfHmjuGCrQkQNeNcU6UtZURdSB/fyt6bMWARa",
     },
@@ -32,6 +31,14 @@ class Users {
         let nextId;
         if(items.length === 0)nextId = 1;
         else nextId = items[items.length-1].id + 1;
+    }
+
+    getOneById(id){
+        const items = parse(this.jsonDbPath);
+        const foundIndex = items.findIndex((item) => item.id == id);
+        if(foundIndex < 0)return;
+
+        return items[foundIndex];
     }
 
     getOneByUsername(username){
