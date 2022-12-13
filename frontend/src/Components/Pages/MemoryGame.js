@@ -242,11 +242,11 @@ function spreadCards(array) {
 	}
 }
 
-function startWatching(seconds2, minutes2) {
+function startWatching(seconds, minutes) {
 	timerObserver = setInterval(() => {
-		seconds2 > 58 ? ((minutes += 1), (seconds = 0)) : (seconds += 1);
-		secondsStr = seconds2 > 9 ? `${seconds2}` : `0${seconds2}`;
-		minutesStr = minutes2 > 9 ? `${minutes2}` : `0${minutes2}`;
+		seconds > 58 ? ((minutes += 1), (seconds = 0)) : (seconds += 1);
+		secondsStr = seconds > 9 ? `${seconds}` : `0${seconds}`;
+		minutesStr = minutes > 9 ? `${minutes}` : `0${minutes}`;
 		time.innerHTML = `${minutesStr}:${secondsStr}`;
 		if (correctFlips >= 9) {
 			audio.play();
@@ -282,7 +282,7 @@ function gameWonParty(moves) {
 	// const audio = new Audio('https://loudlinks.rocks/sounds/mp3/magic.mp3');
 	audio.play();
 	// alert(`You Won with just ${moves} moves !`);
-	
+	//NOTE: make a fancy celebration with canvas
 }
 
 box.forEach(el => el.addEventListener('click', flipOnClick));
