@@ -266,9 +266,7 @@ body {
     margin-top: 2em;
 }
 #btnPop{
-    border-radius: 20%;
-    border-color: aqua;
-    border-width: 0.5em;
+    border-radius: 20%;  
 }
 
 
