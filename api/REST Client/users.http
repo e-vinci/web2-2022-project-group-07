@@ -30,6 +30,29 @@ Content-Type: application/json
     "password": "bonjour"
 }
 
+### update reflexeGame score
+PUT {{baseUrl}}/userScores/scoreReflexe
+Content-Type: application/json
 
-### test
-GET {{baseUrl}}/username/1
+{
+    "username": "admin",
+    "scoreReflexe": 300
+}
+
+### update fast click score
+PUT {{baseUrl}}/userScores/scoreFastClick
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreFastClick": 199
+}
+
+### update fast click score
+PUT {{baseUrl}}/userScores/scoreFastClick
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreFastClick": 100
+}
