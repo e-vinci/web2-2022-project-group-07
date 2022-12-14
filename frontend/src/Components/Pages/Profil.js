@@ -4,8 +4,6 @@ import { getAuthenticatedUser } from '../../utils/auths';
 import Navbar from '../Navbar/Navbar';
 
 
-
-
 const readUsername = async () => {
   const userSession = getAuthenticatedUser();
   return userSession.username;
@@ -68,6 +66,17 @@ async function renderProfilForm() {
     num2.textContent = 10;
     game2.appendChild(num2);
     row.appendChild(game2);
+
+    const game3 = document.createElement('div');
+    game3.className = 'col-md-4';
+    const title3 = document.createElement('h5');
+    title3.textContent = 'Reaction Time';
+    game3.appendChild(title3);
+    const num3 = document.createElement('span');
+    num3.className = 'num';
+    num3.textContent = 10;
+    game3.appendChild(num3);
+    row.appendChild(game3);
 
 
 

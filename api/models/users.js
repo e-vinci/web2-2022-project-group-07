@@ -41,6 +41,7 @@ class Users {
         return items[foundIndex];
     }
 
+
     getOneByUsername(username){
         const items = parse(this.jsonDbPath);
         const foundIndex = items.findIndex((item) => item.username == username);
@@ -51,10 +52,11 @@ class Users {
 
     async addOne(body){
         const items = parse(jsonDbPath);
-
+    
         const hashedPassword = await bcrypt.hash(body.password, saltRounds);
 
         const newItem = {
+            username: body.username,
             username: body.username,
             password: hashedPassword,
         };
