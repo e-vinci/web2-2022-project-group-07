@@ -1,13 +1,13 @@
 import rotatingBrain from '../../img/ClickHereBrain.gif';
+import rotatingBrainEmpty from '../../img/rotatingBrain.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame.gif';
 import fastClick from '../../img/FastClickGame.gif';
 import Navigate from "../Router/Navigate";
-/* import { isAuthenticated } from '../../utils/auths'; */
+import { isAuthenticated } from '../../utils/auths'; 
 
 const HomePage = () => {
     renderPage();
-    onClickGames();
 };
 
 function renderPage() {
@@ -39,8 +39,37 @@ function renderPage() {
 
 `;
 
+const homePageEmpty = `
+  
+<div class="row align-items-center homePageContent">
+    <div class="col-md align-self-end float-lg-start text-component">   
+        <h1>Welcome to BeBrain !</h1>
+        <p>Here you can try to improve your brain level and discover his potential.</p>
+    </div>
+    <div class="col-sm-3 gameButtons">
+        <div id=firstGame data-uri="/reflexPage">
+        </div>
+        <div id=secondGame data-uri="/reflexPage">
+        </div>
+        <div id=thirdGame data-uri="#">
+        </div>
+        <div id=lastGame data-uri="/fastClick">
+        </div>
+    </div>
+    <div class="col-md d-flex justify-content-center">
+        <div class="row gif">
+            <img id ='brain' class="img-fluid " src="${rotatingBrainEmpty}" alt="Responsive image" />
+        </div>
+    </div>
+</div>
 
-    main.innerHTML = homePage;
+`;
+
+    if(isAuthenticated()){
+        main.innerHTML = homePage;
+    } else {
+        main.innerHTML = homePageEmpty;
+    }
     const menu = document.getElementById('brain');
     const firstGame = document.getElementById('firstGame');
     const secondGame = document.getElementById('secondGame');
@@ -49,7 +78,7 @@ function renderPage() {
 
     let isclicked = false;
     menu.addEventListener('click', () => {
-        if (!isclicked) {
+        if (!isclicked && isAuthenticated()) {
             firstGame.innerHTML += `
                 <img class='topbutton'  src="${reflexGameButton}" alt="button_game" className="img-fluid" id="btnPop">
             `;
@@ -96,12 +125,6 @@ function renderPage() {
             isclicked = false;
         }
     });
-
-}
-
-
-
-function onClickGames(){
 
 }
 
