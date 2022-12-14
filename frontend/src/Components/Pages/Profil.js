@@ -23,7 +23,7 @@ async function renderProfilForm() {
     container.className = 'container d-flex justify-content-center';
 
     const card = document.createElement('div');
-    card.className = 'card p-3 py-4';
+    card.className = 'car p-3 py-4';
     card.id = 'cardProfil';
     container.appendChild(card);
 
