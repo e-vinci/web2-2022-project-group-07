@@ -1,15 +1,11 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
 
-// 'use strict';
 
 let correctFlips = 0;
 let lastFlipped = [];
 let moves = 0;
-let seconds = 0;
-let minutes = 0;
-let secondsStr = '';
-let minutesStr = '';
 let timerObserver;
+let started = false;
 
 const cards = {
 	box1: 'box2',
@@ -35,7 +31,7 @@ const cards = {
 const MemoryPage = () => {
     clearPage();
     renderPageTitle('Memory Game');
-   renderMemory();
+    renderMemory();
 };
 
 function renderMemory() {
@@ -45,11 +41,9 @@ function renderMemory() {
     <!-- style was inspired by CARBON => https://www.carbon.now.sh -->
     <div class="carbon">
     <div class="panel">
-    <div class="panel__one circle"></div>
-    <div class="panel__two circle"></div>
-    <div class="panel__three circle">
-    <!--<input type="checkbox" class="toggler3"> -->
-                </div>
+    <div class="panel__one circle">Reset</div>
+    <div class="panel__two circle">Small</div>
+    <div class="panel__three circle">Big</div>
                 </div>
         <!-- end of panel -->
         <div class="container">
@@ -168,42 +162,37 @@ function renderMemory() {
     <div class="carbon tabbar">
 
         <div>
-            <span>{</span>
             <h4>
                 <span>moves:</span>
-                <span class="counter"> 0 </span>,
-                <span>time_elapsed:</span>
-                <span class="time">00:00</span>
+                <span class="counter"> 0 </span>
+       
             </h4>
-            <span>}</span>
-
             <button class="startMemory" id="startButton">START</button>
         </div>
 
-    </div>
-    <!-- <p>by Roektman.com</p> -->
-    
+    </div>    
 
     `;
     main.innerHTML = memoryPage;
     const startButton = document.getElementById('startButton');
-    startButton.addEventListener('click', startGame());
-
+    if (!started){
+        startButton.addEventListener('click', startGame);
+    }
     const circle1 = document.querySelector('.panel__one');
     const circle2 = document.querySelector('.panel__two');
     const circle3 = document.querySelector('.panel__three');
-    const container = document.querySelector('.container');
-    const time = document.querySelector('.time');
+    
     const carbon = document.querySelector('.carbon');
     const counter = document.querySelector('.counter');
 
+    // red circle
     circle1.addEventListener('click', () => {
+        started = false;
         clearInterval(timerObserver);
-        container.innerHTML = '';
-        time.innerHTML = 'XX:XX';
+        renderMemory();
         counter.innerHTML = '0';
     });
-    
+    // orange circle
     circle2.addEventListener('click', () => {
         carbon.style.height = '85%';
         carbon.style.width = '65%';
@@ -213,18 +202,9 @@ function renderMemory() {
         carbon.style.height = '90%';
         carbon.style.width = '90%';
     });
-    
 }
 
 
-
-
-const box = Array.from(document.querySelectorAll('.box'));
-
-
-
-
-// container.innerHTML = '';
 
 function flipOnClick(e) {
     const counter = document.querySelector('.counter');
@@ -248,12 +228,10 @@ function compareFlipped(array) {
 		// console.log(cards[card1], cards[card2]);
 		if (cards[card1] === card2 || cards[card2] === card1) {
 			// console.log('Yay its a match');
-			const c1 = document
-			 	.getElementsByClassName(card1)[0]
-			 	.firstElementChild.classList.add('matchingcards');
-			const c2 = document
-			 	.getElementsByClassName(card2)[0]
-			 	.firstElementChild.classList.add('matchingcards');
+			const c1 = document.getElementsByClassName(card1)[0];
+			c1.firstElementChild.classList.add('matchingcards');
+			const c2 = document.getElementsByClassName(card2)[0];
+			c2.firstElementChild.classList.add('matchingcards');
 			correctFlips += 1;
 			lastFlipped = [];
 		} else {
@@ -277,20 +255,11 @@ function spreadCards(array) {
 	}
 }
 
-function startWatching(Seconds, Minutes) {
-    const time = document.querySelector('.time');
-    let minute = Minutes;
-    let second = Seconds;
+function startWatching() {
+    
+    
 	timerObserver = setInterval(() => {
-		if(Seconds > 58) {
-            minute += 1;
-            second = 0;
-        } else{ 
-            second += 1;
-        }
-		secondsStr = second > 9 ? `${second}` : `0${second}`;
-		minutesStr = minute > 9 ? `${minute}` : `0${minute}`;
-		time.innerHTML = `${minutesStr}:${secondsStr}`;
+		
 		if (correctFlips >= 9) {
 			clearInterval(timerObserver);
             
@@ -301,37 +270,38 @@ function startWatching(Seconds, Minutes) {
 }
 
 function startGame() {
-    const counter = document.querySelector('.counter');
-    const time = document.querySelector('.time');
-    const container = document.querySelector('.container');
-	correctFlips = 0;
-	lastFlipped = [];
-	moves = 0;
-	seconds = 0;
-	minutes = 0;
-	secondsStr = '';
-	minutesStr = '';
-	time.innerHTML = 'XX:XX';
-	counter.innerHTML = '0';
-	container.innerHTML = '';
-	box.forEach(el => el.classList.remove('flipped'));
-	clearInterval(timerObserver);
-	spreadCards(box);
-	container.childNodes.forEach(node =>
-		node.firstElementChild.classList.remove('matchingcards')
-	);
-	startWatching(seconds, minutes);
+    if(!started){
+        started = true;
+        const counter = document.querySelector('.counter');
+        // const container = document.querySelector('.container');
+        const box = Array.from(document.querySelectorAll('.box'));
+
+
+        box.forEach(el => el.addEventListener('click', flipOnClick));
+
+        correctFlips = 0;
+        lastFlipped = [];
+        moves = 0;
+
+        
+        counter.innerHTML = '0';
+        // container.innerHTML = '';
+        box.forEach(el => el.classList.remove('flipped'));
+        clearInterval(timerObserver);
+        spreadCards(box);
+        /* container.childNodes.forEach(node =>
+            node.firstElementChild.classList.remove('matchingcards')); */
+        startWatching();
+    }
 }
 
 function gameWonParty(move) {
-    document.innerHTML = "You Won with just {move} moves !";
-	// alert(`You Won with just ${move} moves !`);
-	// NOTE: make a fancy celebration with canvas
+    let stringmove = 'You Won with just';
+    stringmove += move;
+    stringmove += 'moves !';
+    document.innerHTML =  stringmove;
+	alert(`You Won with just ${move} moves !`);
 }
-
-box.forEach(el => el.addEventListener('click', flipOnClick));
-
-
 
 
 export default MemoryPage;
