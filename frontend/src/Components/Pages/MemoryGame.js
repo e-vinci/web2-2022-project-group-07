@@ -1,5 +1,7 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
 
+'use strict';
+
 let correctFlips = 0;
 let lastFlipped = [];
 let moves = 0;
@@ -176,7 +178,7 @@ function renderMemory() {
             </h4>
             <span>}</span>
 
-            <button class="startMemory" onclick="startGame()">START</button>
+            <button class="startMemory" id="startButton">START</button>
         </div>
 
     </div>
@@ -246,12 +248,12 @@ function compareFlipped(array) {
 		// console.log(cards[card1], cards[card2]);
 		if (cards[card1] === card2 || cards[card2] === card1) {
 			// console.log('Yay its a match');
-			// const c1 = document
-			// 	.getElementsByClassName(card1)[0]
-			// 	.firstElementChild.classList.add('matchingcards');
-			// const c2 = document
-			// 	.getElementsByClassName(card2)[0]
-			// 	.firstElementChild.classList.add('matchingcards');
+			const c1 = document
+			 	.getElementsByClassName(card1)[0]
+			 	.firstElementChild.classList.add('matchingcards');
+			const c2 = document
+			 	.getElementsByClassName(card2)[0]
+			 	.firstElementChild.classList.add('matchingcards');
 			correctFlips += 1;
 			lastFlipped = [];
 		} else {
@@ -322,8 +324,8 @@ function startGame() {
 }
 
 function gameWonParty(move) {
-    
-	alert(`You Won with just ${move} moves !`);
+    container.innerHTML = "You Won with just " + move + " moves !";
+	// alert(`You Won with just ${move} moves !`);
 	// NOTE: make a fancy celebration with canvas
 }
 
