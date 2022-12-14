@@ -1,6 +1,6 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
 
-'use strict';
+// 'use strict';
 
 let correctFlips = 0;
 let lastFlipped = [];
@@ -36,7 +36,6 @@ const MemoryPage = () => {
     clearPage();
     renderPageTitle('Memory Game');
    renderMemory();
-    startGame();
 };
 
 function renderMemory() {
@@ -187,7 +186,8 @@ function renderMemory() {
 
     `;
     main.innerHTML = memoryPage;
-
+    const startButton = document.getElementById('startButton');
+    startButton.addEventListener('click', startGame());
 
     const circle1 = document.querySelector('.panel__one');
     const circle2 = document.querySelector('.panel__two');
@@ -324,7 +324,7 @@ function startGame() {
 }
 
 function gameWonParty(move) {
-    container.innerHTML = "You Won with just " + move + " moves !";
+    document.innerHTML = "You Won with just {move} moves !";
 	// alert(`You Won with just ${move} moves !`);
 	// NOTE: make a fancy celebration with canvas
 }
