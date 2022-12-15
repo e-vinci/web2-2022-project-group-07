@@ -4,7 +4,8 @@ const { Users } = require('../models/users');
 const router = express.Router();
 const userModel = new Users();
 
-router.patch('/scoreReflexe', async function (req, res, next) {
+/*update the scoreReflexe for a user : PATCH /userScores/scoreReflexe */
+router.patch('/scoreReflexe', async function(req, res, next) {
   if (!req.body || (req.body.hasOwnProperty('time-text') && req.body.scoreReflexe === ''))
     return res.status(400).end();
   /* continue change for reflexe game*/
@@ -22,7 +23,8 @@ router.patch('/scoreReflexe', async function (req, res, next) {
   }
 });
 
-router.patch('/scoreFastClick', async function (req, res, next) {
+/*update the scoreReflexe for a user : PATCH /userScores/scoreFastClick */
+router.patch('/scoreFastClick', async function(req, res, next) {
   if (!req.body || (req.body.hasOwnProperty('time-text') && req.body.scoreFastClick === ''))
     return res.status(400).end();
   /* continue change for reflexe game*/

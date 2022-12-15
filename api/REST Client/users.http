@@ -43,8 +43,8 @@ PATCH {{baseUrl}}/userScores/scoreReflexe
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "scoreReflexe": 3000
+    "username": "maxime",
+    "scoreReflexe": 999
 }
 
 ### add score to admin
@@ -53,5 +53,5 @@ Content-Type: application/json
 
 {
     "username": "admin",
-    "scoreFastClick": 27
+    "scoreFastClick": 28
 }

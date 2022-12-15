@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
   res.json({ users: [{ name: 'e-baron' }] });
 });
 
-router.post('/register', async function (req, res, next) {
+/* register a user : POST /auths/register */
+router.post('/register', async function(req, res, next) {
   if (
     !req.body ||
     (req.body.hasOwnProperty('username') && req.body.username.length === 0) ||
@@ -17,15 +18,15 @@ router.post('/register', async function (req, res, next) {
   )
     return res.status(400).end();
 
-    const authenticatedUser = await userModel.register(req.body.username, req.body.password);
+  const authenticatedUser = await userModel.register(req.body.username, req.body.password);
 
-    if(!authenticatedUser)return res.status(409).end();
+  if (!authenticatedUser) return res.status(409).end();
 
-    return res.json(authenticatedUser);
+  return res.json(authenticatedUser);
 });
 
 /* login a user : POST /auths/login*/
-router.post('/login', async function (req, res, next) {
+router.post('/login', async function(req, res, next) {
   if (
     !req.body ||
     (req.body.hasOwnProperty('username') && req.body.username.length === 0) ||
