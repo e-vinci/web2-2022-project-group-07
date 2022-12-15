@@ -1,4 +1,5 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
+import { getAuthenticatedUser } from '../../utils/auths';
 import BouttonBleu from "../../img/button-blue.png"
 import BouttonOver from "../../img/BlueOver.png"
 import BouttonRouge1 from "../../img/red1.png"
@@ -157,6 +158,7 @@ function EndGame() {
     color = "red";
     const TimeText = document.getElementById('time-text');
     TimeText.innerHTML = click/5;
+    saveScore(click/5);
     TimeText.innerHTML += " c/sec";
     click = 0;
     setTimeout(Restart, 3000);
@@ -172,6 +174,24 @@ function Finish() {
     setTimeout( () => {
         EndGame();  
     }, 5000)
+}
+
+async function saveScore(score){
+    const username = getAuthenticatedUser().username;
+    console.log(score);
+    const options = {
+        method: 'PATCH',
+        body: JSON.stringify({
+            username: username,
+            scoreFastClick: score,
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+
+    const response = await fetch(`http://localhost:3000/userScores/scoreFastClick`, options);
+
 }
 
 export default fastpage;

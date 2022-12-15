@@ -60,7 +60,7 @@ class Users {
     if (foundIndex < 0) return;
 
     const updateditem = { ...items[foundIndex], ...body };
-    
+
     items[foundIndex] = updateditem;
 
     serialize(this.jsonDbPath, items);
@@ -76,10 +76,10 @@ class Users {
       id: this.getNextId(),
       username: body.username,
       password: hashedPassword,
-      scoreReflexe: 0,
+      scoreReflexe: 9999,
       scoreFastClick: 0,
-      scoreTracking: 0,
-      scoreMemory: 0,
+      scoreTracking: -9999,
+      scoreMemory: 9999,
     };
     items.push(newItem);
     serialize(this.jsonDbPath, items);

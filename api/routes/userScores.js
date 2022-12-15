@@ -22,17 +22,22 @@ router.patch('/scoreReflexe', async function (req, res, next) {
   }
 });
 
-/*DEMANDER AU PROF SI JE PEUX VERIFIER LE SCORE ICI (ANCIEN SCORE <= NOUVEAU SCORE) */
-router.put('/scoreFastClick', async function (req, res, next) {
-  if (!req.body || (req.body.hasOwnProperty('time-text') && req.body.score === ''))
+router.patch('/scoreFastClick', async function (req, res, next) {
+  if (!req.body || (req.body.hasOwnProperty('time-text') && req.body.scoreFastClick === ''))
     return res.status(400).end();
-  /* continue change for faskclick game*/
+  /* continue change for reflexe game*/
+  const user = await userModel.getOneByUsername(req.body.username);
+  console.log(user.scoreFastClick);
+  console.log(req.body.scoreFastClick);
+  if (user.scoreFastClick >= req.body.scoreFastClick) {
+    return res.json(user);
+  } else {
+    const updatedUser = await userModel.updateOne(req.body.username, req.body);
 
-  const updatedUser = await userModel.updateOne(req.body.username, req.body);
+    if (!updatedUser) return res.status(409).end();
 
-  if (!updatedUser) return res.status(409).end();
-
-  return res.json(updatedUser);
+    return res.json(updatedUser);
+  }
 });
 
 module.exports = router;

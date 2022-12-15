@@ -48,10 +48,10 @@ Content-Type: application/json
 }
 
 ### add score to admin
-PATCH {{baseUrl}}/userScores/scoreReflexe
+PATCH {{baseUrl}}/userScores/scoreFastClick
 Content-Type: application/json
 
 {
     "username": "admin",
-    "scoreReflexe": 153
+    "scoreFastClick": 27
 }
