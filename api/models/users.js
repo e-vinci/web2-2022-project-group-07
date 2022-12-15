@@ -15,10 +15,10 @@ const defaultItems = [
     id: 1,
     username: 'admin',
     password: '$2b$10$RqcgWQT/Irt9MQC8UfHmjuGCrQkQNeNcU6UtZURdSB/fyt6bMWARa',
-    scoreReflexe: 0,
+    scoreReflexe: 9999,
     scoreFastClick: 0,
-    scoreTracking: 0,
-    scoreMemory: 0,
+    scoreTracking: -9999,
+    scoreMemory: 9999,
   },
 ];
 
