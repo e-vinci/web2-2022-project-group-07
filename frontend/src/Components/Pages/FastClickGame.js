@@ -177,16 +177,17 @@ function Finish() {
 }
 
 async function saveScore(score){
-    const username = getAuthenticatedUser().username;
+    const user = getAuthenticatedUser();
     console.log(score);
     const options = {
         method: 'PATCH',
         body: JSON.stringify({
-            username: username,
+            username: user.username,
             scoreFastClick: score,
         }),
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': user.token,
         },
     };
 
