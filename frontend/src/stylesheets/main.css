@@ -538,7 +538,7 @@ body {
   }
   
   .matchingcards {
-    background: #ffbe2e;
+    background: grey;
     -webkit-transition: all 1s ease-in-out 1s;
     -o-transition: all 1s ease-in-out 1s;
     transition: all 1s ease-in-out 1s;
