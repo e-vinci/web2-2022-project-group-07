@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import StartGame from "../Game/StartGame";
 import GameScene from "../Game/GameScene";
 
 
@@ -22,7 +23,7 @@ const TrackingGame = () => {
                 debug: true
             },
         },
-        scene: [GameScene],
+        scene: [StartGame,GameScene],
         //  parent DOM element into which the canvas created by the renderer will be injected.
         parent: 'gameDiv',
     };
