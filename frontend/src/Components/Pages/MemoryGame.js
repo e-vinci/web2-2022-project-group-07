@@ -50,73 +50,73 @@ function renderMemory() {
 
             <div class="box box1">
                 <div class="box backside">
-                    <i class="far fa-gem"></i>
+                    <i class="fab fa-android"></i>
                 </div>
             </div>
 
             <div class="box box2">
                 <div class="box backside">
-                    <i class="far fa-gem"></i>
+                    <i class="fab fa-android"></i>
                 </div>
             </div>
 
             <div class="box box3">
                 <div class="box backside">
-                    <i class="fas fa-bomb"></i>
+                    <i class="fab fa-aws"></i>
                 </div>
             </div>
 
             <div class="box box4">
                 <div class="box backside">
-                    <i class="fas fa-bomb"></i>
+                    <i class="fab fa-aws"></i>
                 </div>
             </div>
 
             <div class="box box5">
                 <div class="box backside">
-                    <i class="fas fa-dizzy"></i>
+                    <i class="fab fa-docker"></i>
                 </div>
             </div>
 
             <div class="box box6">
                 <div class="box backside">
-                    <i class="fas fa-dizzy"></i>
+                    <i class="fab fa-docker"></i>
                 </div>
             </div>
 
             <div class="box box7">
                 <div class="box backside">
-                    <i class="fas fa-cannabis"></i>
+                    <i class="fab fa-github"></i>
                 </div>
             </div>
 
             <div class="box box8">
                 <div class="box backside">
-                    <i class="fas fa-cannabis"></i>
+                    <i class="fab fa-github"></i>
                 </div>
             </div>
 
             <div class="box box9">
                 <div class="box backside">
-                    <i class="fas fa-helicopter"></i>
+                    <i class="fab fa-java"></i>
                 </div>
             </div>
 
             <div class="box box10">
                 <div class="box backside">
-                    <i class="fas fa-helicopter"></i>
+                    <i class="fab fa-java"></i>
                 </div>
             </div>
 
             <div class="box box11">
                 <div class="box backside">
-                    <i class="fas fa-chess"></i>
+                    <i class="fab fa-npm"></i>
                 </div>
             </div>
 
             <div class="box box12">
                 <div class="box backside">
-                    <i class="fas fa-chess"></i>
+                    <i class="fab fa-npm"></i>
                 </div>
             </div>
 
@@ -134,25 +134,25 @@ function renderMemory() {
 
             <div class="box box15">
                 <div class="box backside">
-                    <i class="fas fa-cocktail"></i>
+                    <i class="fab fa-python"></i>
                 </div>
             </div>
 
             <div class="box box16">
                 <div class="box backside">
-                    <i class="fas fa-cocktail"></i>
+                    <i class="fab fa-python"></i>
                 </div>
             </div>
 
             <div class="box box17">
                 <div class="box backside">
-                    <i class="fas fa-dice"></i>
+                    <i class="fab fa-stack-overflow"></i>
                 </div>
             </div>
 
             <div class="box box18">
                 <div class="box backside">
-                    <i class="fas fa-dice"></i>
+                    <i class="fab fa-stack-overflow"></i>
                 </div>
             </div>
 
