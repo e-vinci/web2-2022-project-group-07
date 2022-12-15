@@ -3,6 +3,7 @@ import rotatingBrainEmpty from '../../img/rotatingBrain.gif';
 import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame.gif';
 import fastClick from '../../img/FastClickGame.gif';
+import memory from '../../img/Memory.gif';
 import Navigate from "../Router/Navigate";
 import { isAuthenticated } from '../../utils/auths'; 
 
@@ -83,7 +84,7 @@ const homePageEmpty = `
                 <img class='topbutton'  src="${reflexGameButton}" alt="button_game" className="img-fluid" id="btnPop">
             `;
             secondGame.innerHTML += `
-                <img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+                <img class='topbutton' src="${memory}" alt="button game" className="img-fluid" id="btnPop">
             `;
             thirdGame.innerHTML += `
                 <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">

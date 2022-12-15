@@ -38,8 +38,8 @@ function renderMemory() {
     const main = document.querySelector('main');
 
     const memoryPage = `
-    <!-- style was inspired by CARBON => https://www.carbon.now.sh -->
     <div class="carbon">
+    <div id="victory">Memory Game</div>
     <div class="panel">
     <div class="panel__one circle">Reset</div>
     <div class="panel__two circle">Small</div>
@@ -263,7 +263,7 @@ function startWatching() {
 		if (correctFlips >= 9) {
 			clearInterval(timerObserver);
             
-			gameWonParty(moves);
+			gameWonParty();
 		}
 		// console.log(minutes, secondsStr);
 	}, 1000);
@@ -295,12 +295,9 @@ function startGame() {
     }
 }
 
-function gameWonParty(move) {
-    let stringmove = 'You Won with just';
-    stringmove += move;
-    stringmove += 'moves !';
-    document.innerHTML =  stringmove;
-	alert(`You Won with just ${move} moves !`);
+function gameWonParty() {
+    const msg = document.getElementById('victory');
+    msg.textContent='You Won !';
 }
 
 
