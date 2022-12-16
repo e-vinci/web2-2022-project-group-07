@@ -43,30 +43,42 @@ router.patch('/scoreFastClick', authorize, async function(req, res, next) {
   }
 });
 
+/*update the scoreTracking for a user : PATCH /userScores/scoreTracking */
+router.patch('/scoreTracking', authorize, async function(req, res, next) {
+  if (!req.body || req.body.scoreTracking === '')
+    return res.status(400).end();
+  /* continue change for reflexe game*/
+  const user = await userModel.getOneByUsername(req.body.username);
+  console.log(user.scoreTracking);
+  console.log(req.body.scoreTracking);
+  if (user.scoreTracking >= req.body.scoreTracking) {
+    return res.json(user);
+  } else {
+    const updatedUser = await userModel.updateOne(req.body.username, req.body);
+
+    if (!updatedUser) return res.status(409).end();
+
+    return res.json(updatedUser);
+  }
+});
+
+/*update the scoreMemory for a user : PATCH /userScores/scoreMemory */
+router.patch('/scoreMemory', authorize, async function(req, res, next) {
+  if (!req.body || req.body.scoreMemory === '')
+    return res.status(400).end();
+  /* continue change for reflexe game*/
+  const user = await userModel.getOneByUsername(req.body.username);
+  console.log(user.scoreMemory);
+  console.log(req.body.scoreMemory);
+  if (user.scoreMemory <= req.body.scoreMemory) {
+    return res.json(user);
+  } else {
+    const updatedUser = await userModel.updateOne(req.body.username, req.body);
+
+    if (!updatedUser) return res.status(409).end();
+
+    return res.json(updatedUser);
+  }
+});
+
 module.exports = router;
-
-/*router.post('/scoreAimClick', async function (req, res, next) {
-    if (
-      !req.body ||
-      (req.body.hasOwnProperty('time-text') && req.body.score === '')
-    )
-      return res.status(400).end();
-      const authenticatedUser = await userModel.register(req.body.username, req.body.password);
-  
-      if(!authenticatedUser)return res.status(409).end();
-  
-      return res.json(authenticatedUser);
-  });*/
-
-/*router.post('/scoreTracking', async function (req, res, next) {
-    if (
-      !req.body ||
-      (req.body.hasOwnProperty('time-text') && req.body.score === '')
-    )
-      return res.status(400).end();
-       const authenticatedUser = await userModel.register(req.body.username, req.body.password);
-  
-      if(!authenticatedUser)return res.status(409).end();
-  
-      return res.json(authenticatedUser);
-  });*/

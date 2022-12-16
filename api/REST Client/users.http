@@ -55,3 +55,21 @@ Content-Type: application/json
     "username": "admin",
     "scoreFastClick": 28
 }
+
+### add score to admin
+PATCH {{baseUrl}}/userScores/scoreTracking
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreTracking": 92
+}
+
+### add score to admin
+PATCH {{baseUrl}}/userScores/scoreMemory
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreMemory": 28
+}
