@@ -214,24 +214,6 @@ body {
     z-index: 1;
 }
 
-/* brainstorming gif */
-.gif {
-    max-width: 50%;
-    padding-top: 10%;
-}
-.centerPageTracking {
-    margin: auto;
-    max-width: 50%;
-    padding-top: 10%;
-}
-
-.imgGif {
-    margin-top: -22%;
-    max-width: 20%;
-    transform: scaleX(-1);
-}
-
-
 /* ReflexGame */
 .reflexeGame {
     padding-top: -1%;
