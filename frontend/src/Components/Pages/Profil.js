@@ -49,7 +49,7 @@ async function renderProfilForm() {
     row.appendChild(space);
 
     const game1 = document.createElement('div');
-    game1.className = 'col-md-6';
+    game1.className = 'col-md-6 resultGame';
     const title1 = document.createElement('h5');
     title1.textContent = 'Reflexe Game';
     game1.appendChild(title1);
@@ -60,7 +60,7 @@ async function renderProfilForm() {
     row.appendChild(game1);
 
     const game2 = document.createElement('div');
-    game2.className = 'col-md-6';
+    game2.className = 'col-md-6 resultGame';
     const title2 = document.createElement('h5');
     title2.textContent = 'Reaction Time';
     game2.appendChild(title2);
@@ -74,7 +74,7 @@ async function renderProfilForm() {
     row.appendChild(space1);
 
     const game3 = document.createElement('div');
-    game3.className = 'col-md-6';
+    game3.className = 'col-md-6 resultGame';
     const title3 = document.createElement('h5');
     title3.textContent = 'Reaction Time';
     game3.appendChild(title3);
@@ -85,7 +85,7 @@ async function renderProfilForm() {
     row.appendChild(game3);
 
     const game4 = document.createElement('div');
-    game4.className = 'col-md-6';
+    game4.className = 'col-md-6 resultGame';
     const title4 = document.createElement('h5');
     title4.textContent = 'Tracking';
     game4.appendChild(title4);
