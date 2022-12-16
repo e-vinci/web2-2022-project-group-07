@@ -1,9 +1,16 @@
 const express = require('express');
 const { Users } = require('../models/users');
-const { authorize } = require("../utils/authorize");
+const { authorize } = require('../utils/authorize');
 
 const router = express.Router();
 const userModel = new Users();
+
+/*get a user by his username : GET /userScores/{username} */
+router.get('/:username/:scoreName', authorize, async function(req, res, next) {
+  if (!req.params || req.params.username === '' || req.params.scoreName === '')
+    return res.status(400).end();
+  return await userModel.getSpecificScore(req.params.username, req.params.scoreName);
+});
 
 /*update the scoreReflexe for a user : PATCH /userScores/scoreReflexe */
 router.patch('/scoreReflexe', authorize, async function(req, res, next) {
@@ -45,8 +52,7 @@ router.patch('/scoreFastClick', authorize, async function(req, res, next) {
 
 /*update the scoreTracking for a user : PATCH /userScores/scoreTracking */
 router.patch('/scoreTracking', authorize, async function(req, res, next) {
-  if (!req.body || req.body.scoreTracking === '')
-    return res.status(400).end();
+  if (!req.body || req.body.scoreTracking === '') return res.status(400).end();
   /* continue change for reflexe game*/
   const user = await userModel.getOneByUsername(req.body.username);
   console.log(user.scoreTracking);
@@ -64,8 +70,7 @@ router.patch('/scoreTracking', authorize, async function(req, res, next) {
 
 /*update the scoreMemory for a user : PATCH /userScores/scoreMemory */
 router.patch('/scoreMemory', authorize, async function(req, res, next) {
-  if (!req.body || req.body.scoreMemory === '')
-    return res.status(400).end();
+  if (!req.body || req.body.scoreMemory === '') return res.status(400).end();
   /* continue change for reflexe game*/
   const user = await userModel.getOneByUsername(req.body.username);
   console.log(user.scoreMemory);
