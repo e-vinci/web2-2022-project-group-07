@@ -1,27 +1,27 @@
 import { clearPage, renderPageTitle } from "../../utils/render";
 import BouttonBleu from "../../img/button-blue.png"
-import BouttonRouge from "../../img/button-red.png"
+import BouttonOver from "../../img/BlueOver.png"
+import BouttonRouge1 from "../../img/red1.png"
+import BouttonRouge2 from "../../img/red2.png"
+import BouttonRouge3 from "../../img/red3.png"
 import BouttonVert from "../../img/verte.png"
 
 
-let timeout1;
-let timeout2;
-
 let color = "blue";
+let click = 0;
 
-let TimeNow;
 
-const reflexepage = () => {
+const fastpage = () => {
     clearPage();
-    renderPageTitle('Reflexe Game');
-    renderReflexePage();
+    renderPageTitle('Fast Click Game');
+    renderFastPage();
 }
 
 
-function renderReflexePage() {
+function renderFastPage() {
     const main = document.querySelector('main');
     const section = document.createElement('section');
-    section.className = 'section';
+    section.className = 'vh-100';
     
   
     const container = document.createElement('div');
@@ -53,17 +53,17 @@ function renderReflexePage() {
     const header = document.createElement('div');
     header.className = 'headerReflexion';
     const titleGame = document.createElement('h1');
-    titleGame.textContent = 'Reaction Time Game';
+    titleGame.textContent = 'Fast Click Game';
     header.appendChild(titleGame);
     cardBody.appendChild(header);
 
     const navi = document.createElement('div');
     navi.className = 'navigation';
     const title2 = document.createElement('h2');
-    title2.textContent = 'Checkout your reaction time!';
+    title2.textContent = 'Checkout your speed !';
     const p1 = document.createElement('p');
     p1.className = 'information';
-    p1.textContent = 'Click the area after the color change to ';
+    p1.textContent = 'Click in the area for 5s when the color change to ';
     const greenSpan = document.createElement('span');
     greenSpan.textContent = 'GREEN';
     p1.appendChild(greenSpan);
@@ -78,7 +78,7 @@ function renderReflexePage() {
     const buttImg = document.createElement('img');
     buttImg.src = BouttonBleu;
     buttImg.className = 'bouttonColor';
-    buttImg.id = "bouton";
+    buttImg.id = "boutonFast";
    
 
     const scoreDiv = document.createElement('div');
@@ -87,8 +87,6 @@ function renderReflexePage() {
     const sect1 = document.createElement('div');
     sect1.className = 'section-1';
 
-
-    
 
     canvasParent.appendChild(buttImg);
 
@@ -101,13 +99,13 @@ function renderReflexePage() {
     sect2.className = 'section-2';
 
     const pText = document.createElement('p');
-    pText.textContent = 'Your time (ms) :';
+    pText.textContent = 'Your score :';
     pText.className = 'textYourTime';
     sect2.appendChild(pText);
     const pText2 = document.createElement('p');
     pText2.className = "timeText";
     pText2.id = 'time-text';
-    pText2.textContent = 'NO TIME';
+    pText2.textContent = '...';
     
     sect2.appendChild(pText2);
 
@@ -117,93 +115,63 @@ function renderReflexePage() {
     section.appendChild(div1);
     main.appendChild(section);
 
-
-   /* main.appendChild(div1); */
-
     buttImg.addEventListener('click', () => {
         if (color === "blue") {
             StartGame();
-        } else if (color === "red"){
-            pText2.innerHTML = "To fast...";
-            EndGame();
-        } else {
-            const date2 = new Date();
-            const TimeLater = date2.getTime();
-            const PlayTime = (TimeLater - TimeNow);
-            const TimeText = document.getElementById('time-text');
-            TimeText.innerHTML = PlayTime;
-            EndGame();
+        } else if (color === "green"){
+            click += 1;
         }
     });
 }
 
 
-
 function StartGame() {
-    const ChangeTime = GetRandomTime(1, 8);
-    const EndTime = ChangeTime + 5000;
-
-    const boutton = document.getElementById('bouton');
-    boutton.src = BouttonRouge;
+    const boutton = document.getElementById('boutonFast');
+    boutton.src = BouttonRouge3;
     color = "red";
-    Timeout1Function( ChangeTime );
-    Timeout2Function( EndTime );
+    setTimeout(Button2, 1000);
+    setTimeout(Button1, 2000);
+    setTimeout(TurnGreen, 3000);
+}
+
+function Button2() {
+    const boutton = document.getElementById('boutonFast');
+    boutton.src = BouttonRouge2;
+}
+
+function Button1() {
+    const boutton = document.getElementById('boutonFast');
+    boutton.src = BouttonRouge1;
+}
+
+function TurnGreen() {
+    const boutton = document.getElementById('boutonFast');
+    boutton.src = BouttonVert;
+    color = "green";   
+    Finish();
 }
 
 function EndGame() {
-    clearTimeout(timeout1);
-    clearTimeout(timeout2);
-    const boutton2 = document.getElementById('bouton');
+    const boutton2 = document.getElementById('boutonFast');
+    boutton2.src = BouttonOver;
+    color = "red";
+    const TimeText = document.getElementById('time-text');
+    TimeText.innerHTML = click/5;
+    TimeText.innerHTML += " c/sec";
+    click = 0;
+    setTimeout(Restart, 3000);
+}
+
+function Restart() {
+    const boutton2 = document.getElementById('boutonFast');
     boutton2.src = BouttonBleu;
     color = "blue";
-   
 }
 
-function GetRandomTime(min, max) {
-    let result = Math.floor( Math.random() * Math.floor(max) ) + min;
-    result *= 1000;
-    return result;
+function Finish() {
+    setTimeout( () => {
+        EndGame();  
+    }, 5000)
 }
 
-function Timeout2Function(time) {
-    timeout2 = setTimeout( () => {
-        const TimeText = document.getElementById('time-text');
-        TimeText.innerHTML = "Too slow...";
-        EndGame();
-    }, time);
-}
-
-function Timeout1Function(time) {
-    timeout1 = setTimeout( () => {
-
-        const boutton3 = document.getElementById('bouton');
-        boutton3.src = BouttonVert;
-        color = "green";    
-
-        const date1 = new Date();
-        TimeNow = date1.getTime();
-
-    }, time)
-}
-
-/*
-async function saveScore(e){
-    e.preventDefault();
-
-    const score = document.querySelector('#time-text').textContent;
-
-    const options = {
-        method: 'POST',
-        body: JSON.stringify({
-            score,
-        }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    };
-
-    const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, options);
-
-}
-*/
-export default reflexepage;
+export default fastpage;

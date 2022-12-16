@@ -7,21 +7,21 @@ import Navigate from '../Router/Navigate';
 const LoginPage = () => {
   clearPage();
   renderPageTitle('Login');
-  renderRegisterForm();
+  renderLoginForm();
 };
 
-function renderRegisterForm() {
+function renderLoginForm() {
   const main = document.querySelector('main');
   const section = document.createElement('section');
-  section.className = 'vh-100';
-  
+  section.className = 'section';
+
 
   const container = document.createElement('div');
-  container.className = 'container py-5 h-100';
+  container.className = 'container py-5';
   section.appendChild(container);
 
   const row = document.createElement('div');
-  row.className = 'row d-flex justify-content-center align-items-center h-100';
+  row.className = 'row d-flex justify-content-center align-items-center';
   container.appendChild(row);
 
   const col = document.createElement('div');
@@ -31,7 +31,7 @@ function renderRegisterForm() {
   const cardShadow = document.createElement('div');
   cardShadow.className = 'card shadow-2-strong';
   cardShadow.style = 'border-radius: 1rem;';
-  col.appendChild(cardShadow); 
+  col.appendChild(cardShadow);
 
   const cardBody = document.createElement('div');
   cardBody.className = 'card-body p-5 text-center';
@@ -48,12 +48,13 @@ function renderRegisterForm() {
 
   const name = document.createElement('input');
   name.type = 'Name';
-  name.id = 'typeEmailX-2';
+  name.id = 'username';
   name.className = 'form-control form-control-lg';
   form.appendChild(name);
 
   const label = document.createElement('label');
   label.className = 'form-label';
+  label.id = 'name';
   label.for = 'typeEmailX-2';
   label.textContent = 'Name';
   form.appendChild(label);
@@ -65,13 +66,14 @@ function renderRegisterForm() {
 
   const mdp = document.createElement('input');
   mdp.type = 'password';
-  mdp.id = 'typePasswordX-2';
+  mdp.id = 'password';
   mdp.className = 'form-control form-control-lg';
   form2.appendChild(mdp);
 
   const label2 = document.createElement('label');
   label2.className = 'form-label';
-  label2.for = 'typePasswordX-2';
+  label2.id = 'passwordButton';
+  label2.for = 'password';
   label2.textContent = 'Password';
   form2.appendChild(label2);
 
@@ -107,22 +109,20 @@ function renderRegisterForm() {
   cardBody.appendChild(button1);
 
 
-  
+
 
   const gifImg = document.createElement('img');
   gifImg.src = brainstorming;
   gifImg.className = 'imgGif';
-  
+
   cardBody.appendChild(gifImg);
 
 
-  cardBody.addEventListener('submit', onLogin);
+  /* cardBody.addEventListener('submit', onLogin); */
 
   main.appendChild(section);
 
-
-
-  
+  button1.addEventListener('click', onLogin);
 }
 
 function onCheckboxClicked(e) {
@@ -132,8 +132,8 @@ function onCheckboxClicked(e) {
 async function onLogin(e) {
   e.preventDefault();
 
-  const username = document.querySelector('#name').value;
-  const password = document.querySelector('#password').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   const options = {
     method: 'POST',
@@ -146,7 +146,7 @@ async function onLogin(e) {
     },
   };
 
-  const response = await fetch('/api/auths/login', options);
+  const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, options);
 
   if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
 
