@@ -6,10 +6,11 @@ const router = express.Router();
 const userModel = new Users();
 
 /*get a user by his username : GET /userScores/{username} */
-router.get('/:username/:scoreName', authorize, async function(req, res, next) {
-  if (!req.params || req.params.username === '' || req.params.scoreName === '')
-    return res.status(400).end();
-  return await userModel.getSpecificScore(req.params.username, req.params.scoreName);
+router.get('/:username', authorize, async function(req, res, next) {
+  if (!req.params || req.params.username === '') return res.status(400).end();
+  const user = await userModel.getOneByUsername(req.params.username);
+  if (!user) return res.status(404).end();
+  return res.json(user);
 });
 
 /*update the scoreReflexe for a user : PATCH /userScores/scoreReflexe */

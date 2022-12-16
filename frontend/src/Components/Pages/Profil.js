@@ -8,6 +8,22 @@ const readUsername = async () => {
   return userSession.username;
 };
 
+async function getScores() {
+  const authenticatedUser = getAuthenticatedUser();
+  if (!authenticatedUser) return undefined;
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: authenticatedUser.token,
+    },
+  };
+
+  const response = await fetch(`${process.env.API_BASE_URL}/userScores/${authenticatedUser.username}`, options);
+  return await response.json();
+}
+
 const ProfilPage = () => {
   clearPage();
   renderPageTitle('Profil');
@@ -16,6 +32,7 @@ const ProfilPage = () => {
 
 async function renderProfilForm() {
   const main = document.querySelector('main');
+  const scores = await getScores();
 
   const container = document.createElement('div');
   container.className = 'container d-flex justify-content-center';
@@ -53,18 +70,18 @@ async function renderProfilForm() {
   game1.appendChild(title1);
   const num1 = document.createElement('span');
   num1.className = 'num';
-  num1.textContent = 10;
+  num1.textContent = scores.scoreReflexe;
   game1.appendChild(num1);
   row.appendChild(game1);
 
   const game2 = document.createElement('div');
   game2.className = 'col-md-6 resultGame';
   const title2 = document.createElement('h5');
-  title2.textContent = 'Reaction Time';
+  title2.textContent = 'Fast Click Game';
   game2.appendChild(title2);
   const num2 = document.createElement('span');
   num2.className = 'num';
-  num2.textContent = 10;
+  num2.textContent = scores.scoreFastClick;
   game2.appendChild(num2);
   row.appendChild(game2);
 
@@ -74,22 +91,23 @@ async function renderProfilForm() {
   const game3 = document.createElement('div');
   game3.className = 'col-md-6 resultGame';
   const title3 = document.createElement('h5');
-  title3.textContent = 'Reaction Time';
+  title3.textContent = 'Memory Game';
   game3.appendChild(title3);
   const num3 = document.createElement('span');
   num3.className = 'num';
-  num3.textContent = 10;
+  num3.textContent = scores.scoreMemory;
   game3.appendChild(num3);
   row.appendChild(game3);
 
   const game4 = document.createElement('div');
   game4.className = 'col-md-6 resultGame';
   const title4 = document.createElement('h5');
-  title4.textContent = 'Tracking';
+  title4.textContent = 'Tracking Game';
   game4.appendChild(title4);
   const num4 = document.createElement('span');
   num4.className = 'num';
-  num4.textContent = getScores("scoreTracking");
+  const trackingScore = scores.scoreTracking;
+  num4.textContent = trackingScore;
   game4.appendChild(num4);
   row.appendChild(game4);
 
@@ -97,23 +115,6 @@ async function renderProfilForm() {
   main.appendChild(container);
 
   Navbar();
-}
-
-async function getScores(scoreName) {
-  const authenticatedUser = getAuthenticatedUser();
-  if (!authenticatedUser) return undefined;
-  console.log("bonjour");
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: authenticatedUser.token,
-    },
-  };
-
-  const response = await fetch(`${process.env.API_BASE_URL}/userScores/${authenticatedUser.username}/${scoreName}`, options);
-  results = await response.json();
-  return results;
 }
 
 export default ProfilPage;
