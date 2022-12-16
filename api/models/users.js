@@ -24,6 +24,7 @@ const defaultItems = [
 ];
 
 class Users {
+
   constructor(dbPath = jsonDbPath, items = defaultItems) {
     this.jsonDbPath = dbPath;
     this.defaultItems = items;

@@ -1,5 +1,5 @@
 import { removePathPrefix, usePathPrefix } from '../../utils/path-prefix';
-import routes from './routes';
+import routes from './routes'
 
 const Router = () => {
   onFrontendLoad();

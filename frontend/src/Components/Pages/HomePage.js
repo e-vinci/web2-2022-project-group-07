@@ -1,8 +1,9 @@
 import rotatingBrain from '../../img/ClickHereBrain.gif';
 import rotatingBrainEmpty from '../../img/rotatingBrain.gif';
-import gamebutton from '../../img/verte.png';
 import reflexGameButton from '../../img/ReflexGame.gif';
 import fastClick from '../../img/FastClickGame.gif';
+import memory from '../../img/Memory.gif';
+import trackingGame from '../../img/TrackingGame.gif';
 import Navigate from "../Router/Navigate";
 import { isAuthenticated } from '../../utils/auths'; 
 
@@ -23,9 +24,9 @@ function renderPage() {
         <div class="col-sm-3 gameButtons">
             <div id=firstGame data-uri="/reflexPage">
             </div>
-            <div id=secondGame data-uri="/reflexPage">
+            <div id=secondGame data-uri="/memory">
             </div>
-            <div id=thirdGame data-uri="#">
+            <div id=thirdGame data-uri="trackingGame">
             </div>
             <div id=lastGame data-uri="/fastClick">
             </div>
@@ -51,7 +52,7 @@ const homePageEmpty = `
         </div>
         <div id=secondGame data-uri="/reflexPage">
         </div>
-        <div id=thirdGame data-uri="#">
+        <div id=thirdGame data-uri="/trackingGame">
         </div>
         <div id=lastGame data-uri="/fastClick">
         </div>
@@ -83,10 +84,10 @@ const homePageEmpty = `
                 <img class='topbutton'  src="${reflexGameButton}" alt="button_game" className="img-fluid" id="btnPop">
             `;
             secondGame.innerHTML += `
-                <img class='topbutton' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+                <img class='topbutton' src="${memory}" alt="button game" className="img-fluid" id="btnPop">
             `;
             thirdGame.innerHTML += `
-                <img class='dimension-button ' src="${gamebutton}" alt="button game" className="img-fluid" id="btnPop">
+                <img class='dimension-button ' src="${trackingGame}" alt="button game" className="img-fluid" id="btnPop">
             `;
             lastGame.innerHTML += `
                 <img class='dimension-button ' src="${fastClick}" alt="button game" className="img-fluid" id="btnPop">
