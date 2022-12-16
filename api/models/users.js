@@ -71,6 +71,16 @@ class Users {
     return items[foundIndex];
   }
 
+  getSpecificScore(username, scoreName){
+    const items = parse(this.jsonDbPath);
+    const foundIndex = items.findIndex((item) => item.username == username);
+    if (foundIndex < 0) return;
+    if(scoreName == "scoreReflexe")return items[foundIndex].scoreReflexe;
+    else if(scoreName == "scoreFastClick")return items[foundIndex].scoreFastClick;
+    else if(scoreName == "scoreTracking")return items[foundIndex].scoreTracking;
+    else return items.foundIndex[foundIndex].scoreMemory;
+  }
+
   /**
    * Updates an item in the json file and returns the updated item
    * @param {number} id - id of the item to be updated
