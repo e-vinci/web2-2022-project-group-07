@@ -30,6 +30,28 @@ Content-Type: application/json
     "password": "bonjour"
 }
 
+###get one by id
+GET {{baseUrl}}/user/username
+Content-Type: application/json
 
-### test
-GET {{baseUrl}}/username/1
+{
+    "id": 1
+}
+
+### add score to admin
+PATCH {{baseUrl}}/userScores/scoreReflexe
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "scoreReflexe": 999
+}
+
+### add score to admin
+PATCH {{baseUrl}}/userScores/scoreFastClick
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreFastClick": 28
+}

@@ -6,9 +6,8 @@ const cors = require('cors');
 const corsOptions = {
     origin: 'http://localhost:8080',
 };
-//const usersRouter = require('./routes/users');
+const userScoresRouter = require('./routes/userScores');
 const authsRouter = require('./routes/auths');
-// const pizzaRouter = require('./routes/pizzas');
 
 
 const app = express();
@@ -20,9 +19,8 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 
-//app.use('/users', usersRouter);
+app.use('/userScores', userScoresRouter);
 app.use('/auths', authsRouter);
-// app.use('/pizzas', cors(corsOptions), pizzaRouter);
 
 
 module.exports = app;
