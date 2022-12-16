@@ -204,7 +204,7 @@ async function saveScore(score){
         },
     };
 
-    const response = await fetch(`http://localhost:3000/userScores/scoreReflexe`, options);
+    const response = await fetch(`${process.env.API_BASE_URL}/userScores/scoreReflexe`, options);
 
 }
 
