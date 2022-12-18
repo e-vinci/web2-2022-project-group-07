@@ -30,15 +30,10 @@ Content-Type: application/json
     "password": "bonjour"
 }
 
-###get one by id
-GET {{baseUrl}}/user/username
-Content-Type: application/json
+### get admin with his username
+GET {{baseUrl}}/userScores/admin
 
-{
-    "id": 1
-}
-
-### add score to admin
+### add scoreReflexe to admin
 PATCH {{baseUrl}}/userScores/scoreReflexe
 Content-Type: application/json
 
@@ -47,7 +42,7 @@ Content-Type: application/json
     "scoreReflexe": 999
 }
 
-### add score to admin
+### add scoreFastClick to admin
 PATCH {{baseUrl}}/userScores/scoreFastClick
 Content-Type: application/json
 
@@ -56,7 +51,7 @@ Content-Type: application/json
     "scoreFastClick": 28
 }
 
-### add score to admin
+### add scoreTracking to admin
 PATCH {{baseUrl}}/userScores/scoreTracking
 Content-Type: application/json
 
@@ -65,7 +60,7 @@ Content-Type: application/json
     "scoreTracking": 92
 }
 
-### add score to admin
+### add scoreMemory to admin
 PATCH {{baseUrl}}/userScores/scoreMemory
 Content-Type: application/json
 
