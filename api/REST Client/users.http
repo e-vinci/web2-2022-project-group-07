@@ -1,4 +1,70 @@
-@baseUrl = http://localhost:3000
+@baseUrl = "http//localhost:3000"
 
 ### Read all users
 GET {{baseUrl}}/users
+
+###login admin
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###login user
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "password": "admin"
+}
+
+### register a user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "password": "bonjour"
+}
+
+### get admin with his username
+GET {{baseUrl}}/userScores/admin
+
+### add scoreReflexe to admin
+PATCH {{baseUrl}}/userScores/scoreReflexe
+Content-Type: application/json
+
+{
+    "username": "maxime",
+    "scoreReflexe": 999
+}
+
+### add scoreFastClick to admin
+PATCH {{baseUrl}}/userScores/scoreFastClick
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreFastClick": 28
+}
+
+### add scoreTracking to admin
+PATCH {{baseUrl}}/userScores/scoreTracking
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreTracking": 92
+}
+
+### add scoreMemory to admin
+PATCH {{baseUrl}}/userScores/scoreMemory
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "scoreMemory": 28
+}

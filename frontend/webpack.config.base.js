@@ -4,13 +4,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const DEVELOPMENT_API_BASE_URL = 'http://localhost:3000';
+const PRODUCTION_API_BASE_URL = 'http://web2-2022-project-group-07-bebrain.io';
+const DEVELOPMENT_PATH_PREFIX = '/';
+const PRODUCTION_PATH_PREFIX = '/group7-bebrain.github.io/';
+
+const buildMode = process.argv[process.argv.indexOf('--mode') + 1];
+const isProductionBuild = buildMode === 'production';
+const API_BASE_URL = isProductionBuild ? PRODUCTION_API_BASE_URL : DEVELOPMENT_API_BASE_URL;
+const PATH_PREFIX = isProductionBuild ? PRODUCTION_PATH_PREFIX : DEVELOPMENT_PATH_PREFIX;
+
 module.exports = {
   mode: 'none',
   entry: './src/index.js',
   output: {
     path: `${__dirname}/dist`,
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: PATH_PREFIX,
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -81,6 +91,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      publicPath: PATH_PREFIX,
     }),
     new CleanWebpackPlugin({
       root: path.resolve(__dirname, '../'),
@@ -94,6 +105,9 @@ module.exports = {
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
+      'process.env.BUILD_MODE': JSON.stringify(buildMode),
+      'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
+      'process.env.PATH_PREFIX': JSON.stringify(PATH_PREFIX),
     }),
     new ESLintPlugin(),
   ],
