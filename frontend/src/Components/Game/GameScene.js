@@ -90,7 +90,6 @@ class GameScene extends Phaser.Scene {
 
 async function saveScore(score){
   const user = getAuthenticatedUser();
-  console.log(score);
   const options = {
       method: 'PATCH',
       body: JSON.stringify({
@@ -103,7 +102,7 @@ async function saveScore(score){
       },
   };
 
-  const response = await fetch(`${process.env.API_BASE_URL}/userScores/scoreTracking`, options);
+  await fetch(`${process.env.API_BASE_URL}/userScores/scoreTracking`, options);
 
 }
 
